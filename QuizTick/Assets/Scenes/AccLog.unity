@@ -994,13 +994,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329748785}
+  - component: {fileID: 329748786}
   m_Layer: 0
   m_Name: RegisterPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &329748785
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,6 +1018,24 @@ Transform:
   - {fileID: 574269905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &329748786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329748784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808b6c95cad5730459dde8269bd170b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstNameInput: {fileID: 274516558}
+  lastNameInput: {fileID: 1679995401}
+  emailInput: {fileID: 1728533638}
+  usernameInput: {fileID: 472254294}
+  passwordInput: {fileID: 2132248464}
+  rePasswordInput: {fileID: 1787637580}
 --- !u!1 &351105381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,13 +1045,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 351105382}
+  - component: {fileID: 351105383}
   m_Layer: 0
   m_Name: LoginPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &351105382
 Transform:
   m_ObjectHideFlags: 0
@@ -1049,6 +1069,20 @@ Transform:
   - {fileID: 298813559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351105383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351105381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c1cf695ece78443bb9c0f11997c61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInput: {fileID: 1836910031}
+  passwordInput: {fileID: 1558990541}
 --- !u!1 &431910516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +2002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 522336852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 351105383}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: OnLoginButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &522336852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4499,7 +4545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10}
+  m_AnchoredPosition: {x: 0, y: -9.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301186985
@@ -6708,7 +6754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1956197888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 329748786}
+        m_TargetAssemblyTypeName: SignUp, Assembly-CSharp
+        m_MethodName: OnSignUpButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1956197888
 MonoBehaviour:
   m_ObjectHideFlags: 0
