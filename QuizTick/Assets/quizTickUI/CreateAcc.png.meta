@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b60fa81d0e97163498b5e29929c7ec99
+guid: 517b921f52c4c8846b6ac730199a1aea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7255763235516895090
-    second: LoginBtn_0
+      213: -6691861281379155937
+    second: CreateAcc_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,11 +126,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoginBtn_0
+      name: CreateAcc_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 17
+        x: 15
+        y: 13
         width: 275
         height: 93
       alignment: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27fc2535836a1b460800000000000000
-      internalID: 7255763235516895090
+      spriteID: f10843d9e9bb123a0800000000000000
+      internalID: -6691861281379155937
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LoginBtn_0: 7255763235516895090
+      CreateAcc_0: -6691861281379155937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
