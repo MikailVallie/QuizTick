@@ -1,0 +1,22 @@
+[
+  {"questionText": "What is Java primarily used for?", "options": ["Web development", "App development", "Both", "None"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "Java is platform independent?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which keyword is used to create a subclass in Java?", "options": ["this", "super", "extends", "implements"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "Which symbol is used to end a statement in Java?", "options": [";", ".", ":", ","], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Java programs are compiled into bytecode?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "What is the default value of a boolean in Java?", "options": ["true", "false", "0", "null"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Which primitive type stores decimal numbers?", "options": ["int", "float", "char", "boolean"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Which method prints text to the console?", "options": ["System.out.print()", "Console.write()", "print()", "echo()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Java is case-sensitive?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which of these is a valid Java identifier?", "options": ["2var", "myVar", "my-var", "var!"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Which operator is used for addition?", "options": ["+", "-", "*", "/"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which keyword is used to declare a variable?", "options": ["var", "int", "let", "dim"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Java supports single inheritance?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which method starts a Java program?", "options": ["main()", "start()", "run()", "init()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which symbol is used for comments?", "options": ["//", "/* */", "#", "<!-- -->"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which class is the superclass of all classes?", "options": ["Object", "Class", "Super", "Main"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which keyword is used for constants?", "options": ["final", "const", "static", "immutable"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which type stores whole numbers?", "options": ["int", "float", "char", "double"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "The '==' operator compares values in Java?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which package is imported by default in every Java program?", "options": ["java.lang", "java.util", "java.io", "java.net"], "correctIndex": 0, "isTrueFalse": false}
+]

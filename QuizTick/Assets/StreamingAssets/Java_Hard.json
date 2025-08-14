@@ -1,0 +1,22 @@
+[
+  {"questionText": "Which collection class maintains insertion order and allows null keys?", "options": ["HashMap", "LinkedHashMap", "TreeMap", "Hashtable"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "The Java Virtual Machine (JVM) is platform dependent?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+  {"questionText": "Which keyword is used to declare a constant in Java?", "options": ["final", "const", "static", "immutable"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "What does the 'synchronized' keyword do?", "options": ["Handles exceptions", "Enables multithreading", "Locks a method/thread", "Creates a subclass"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "Abstract classes can be instantiated?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+  {"questionText": "Which interface allows a class to be sorted using Collections.sort()?", "options": ["Serializable", "Comparable", "Cloneable", "Iterable"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Which exception is thrown when an array index is out of bounds?", "options": ["ArrayIndexOutOfBoundsException", "IndexOutOfRangeException", "NullPointerException", "RuntimeException"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which keyword is used to implement an interface?", "options": ["extends", "implements", "inherits", "interface"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "What is the default value of an object reference in Java?", "options": ["null", "0", "undefined", "empty"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which Java class is used for thread execution?", "options": ["Thread", "Runnable", "Process", "Executor"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which method is called when an object is garbage collected?", "options": ["finalize()", "destroy()", "cleanup()", "delete()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which access modifier allows access only within the same package?", "options": ["public", "private", "protected", "default"], "correctIndex": 3, "isTrueFalse": false},
+  {"questionText": "Which operator is used for bitwise OR?", "options": ["|", "&", "^", "||"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which statement about Java memory is correct?", "options": ["Stack stores objects", "Heap stores local variables", "Heap stores objects", "Stack stores class definitions"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "Which method in Object class returns a hash code?", "options": ["hash()", "hashCode()", "getHash()", "code()"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Which keyword makes a class immutable?", "options": ["final", "immutable", "static", "const"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which exception occurs when dividing by zero with integers?", "options": ["ArithmeticException", "DivideByZeroException", "NumberFormatException", "IllegalArgumentException"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which interface allows iteration over a collection?", "options": ["Iterator", "Iterable", "Collection", "ListIterator"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "Java supports default methods in interfaces?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which keyword is used to prevent inheritance?", "options": ["final", "static", "abstract", "sealed"], "correctIndex": 0, "isTrueFalse": false}
+]
