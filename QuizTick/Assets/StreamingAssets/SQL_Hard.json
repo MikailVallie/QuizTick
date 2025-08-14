@@ -1,0 +1,22 @@
+[
+  {"questionText": "Which window function assigns a unique sequential number to rows starting at 1?", "options": ["RANK()", "ROW_NUMBER()", "DENSE_RANK()", "SEQUENCE()"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "A correlated subquery is evaluated once for each row in the outer query.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which isolation level prevents dirty reads but allows non-repeatable reads?", "options": ["READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE", "READ UNCOMMITTED"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which SQL clause can be used to create subtotals and grand totals in grouped data?", "options": ["CUBE", "ROLLUP", "GROUPING SETS", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
+  {"questionText": "A clustered index defines the physical order of table data.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which join creates all possible combinations of rows from two tables?", "options": ["CROSS JOIN", "FULL JOIN", "OUTER JOIN", "SELF JOIN"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which feature allows you to store the result of a query physically for faster access?", "options": ["View", "Materialized View", "Temp Table", "CTE"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "The MERGE statement can be used to insert, update, and delete rows in one operation.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which function converts a string to a date in SQL?", "options": ["TO_DATE()", "CAST(... AS DATE)", "DATE_PARSE()", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
+  {"questionText": "Indexes can slow down INSERT and UPDATE operations.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "What does the following query return? SELECT NTILE(4) OVER (ORDER BY salary DESC) AS quartile FROM employees;", "options": ["Assigns rows evenly into 4 groups", "Assigns random quartiles", "Calculates salary percentiles", "None of the above"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which keyword allows naming a window for reuse in multiple window functions?", "options": ["WINDOW", "OVER", "PARTITION", "DEFINE"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Recursive CTEs can be used to traverse hierarchical data.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which locking mechanism prevents other transactions from reading the locked data until the transaction completes?", "options": ["Shared lock", "Exclusive lock", "Update lock", "Intent lock"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "What will this return? SELECT COALESCE(NULL, NULL, 'SQL', 'DB');", "options": ["NULL", "SQL", "DB", "Error"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "JSON_VALUE() can extract a scalar value from a JSON string.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which indexing method is best for high-cardinality columns?", "options": ["Bitmap index", "B-Tree index", "Hash index", "Clustered index"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "A FULL OUTER JOIN can return rows with NULLs from both tables.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which clause is used to specify multiple window definitions in a query?", "options": ["WINDOW", "PARTITION", "DEFINE WINDOW", "OVER"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "EXPLAIN can show how a database executes a query.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
+]
