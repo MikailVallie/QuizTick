@@ -1036,6 +1036,8 @@ MonoBehaviour:
   usernameInput: {fileID: 472254294}
   passwordInput: {fileID: 2132248464}
   rePasswordInput: {fileID: 1787637580}
+  signUpPanel: {fileID: 329748784}
+  loginPanel: {fileID: 351105381}
 --- !u!1 &351105381
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,7 +4104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.2310028}
+  m_AnchoredPosition: {x: 0, y: 2.231018}
   m_SizeDelta: {x: -300, y: -24.1455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1202261531
@@ -4545,7 +4547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -9.999878}
+  m_AnchoredPosition: {x: 0, y: -9.999725}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301186985
