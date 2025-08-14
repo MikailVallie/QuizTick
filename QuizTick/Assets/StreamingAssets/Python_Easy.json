@@ -1,0 +1,22 @@
+[
+    {"questionText": "Python is an interpreted language?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which symbol is used to start a comment in Python?", "options": ["#", "//", "/*", "--"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function is used to display output in Python?", "options": ["echo()", "print()", "display()", "write()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Python uses indentation to define code blocks?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which file extension is used for Python files?", "options": [".java", ".py", ".txt", ".exe"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create a function in Python?", "options": ["function", "func", "def", "define"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Python is case-sensitive?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which data type is used to store text?", "options": ["str", "int", "list", "bool"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function returns the length of a list?", "options": ["size()", "count()", "length()", "len()"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to declare a variable in Python?", "options": ["var", "let", "const", "None of the above"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which symbol is used for multiplication in Python?", "options": ["x", "*", "×", "**"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which method converts text to lowercase?", "options": ["lower()", "downcase()", "toLower()", "min()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python lists can store multiple data types?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for exponentiation?", "options": ["^", "**", "pow", "exp"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which value represents 'no value' in Python?", "options": ["null", "None", "nil", "0"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create a loop in Python?", "options": ["for", "loop", "repeat", "iterate"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Strings in Python are immutable?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for division in Python?", "options": ["/", "\\", "÷", "%"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used for conditional branching?", "options": ["if", "switch", "case", "select"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python was created by Guido van Rossum?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
+  ]
