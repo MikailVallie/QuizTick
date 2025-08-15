@@ -1,0 +1,22 @@
+[
+  {"questionText": "Which of the following is a correct way to create a function?", "options": ["function myFunc() { }", "func myFunc() { }", "create myFunc() { }", "define myFunc() { }"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "let variables are hoisted but not initialized.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "map() changes the original array.", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+  {"questionText": "Which operator is used for exponentiation in JavaScript?", "options": ["^", "**", "^^", "All of the above"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "JSON.stringify() converts an object to a string.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "What will console.log([] == false) print?", "options": ["true", "false", "NaN", "error"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which method removes the last element from an array?", "options": ["Pop()", "shift()", "slice()", "remove()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "The MERGE statement can be used to insert, update, and delete rows in one operation.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "What is the output of:console.log(typeof NaN);", "options": ["NaN", "number", "undefined", "object"], "correctIndex": 1, "isTrueFalse": false},
+  {"questionText": "this in a regular function refers to the global object in non-strict mode.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Template literals use single quotes.", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+  {"questionText": "Which method adds an element to the beginning of an array?", "options": ["push()", "shift()", "unshift()", "prepend"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "continue skips the current iteration in a loop..", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which method joins all elements of an array into a single string?", "options": ["join()", "concat()", "toString()", "merge()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Which built-in function can be used to parse a string into a float number?", "options": ["parseFloat()", "parseInt()", "Number.parseFloat()", "toFloat()"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "JSNaN stands for 'Not a Number'", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "Which loop will always run at least once?", "options": ["for", "while", "do-while", "for of"], "correctIndex": 2, "isTrueFalse": false},
+  {"questionText": "Arrow functions can be anonymous", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+  {"questionText": "What will be the output? console.log(!!'Hello';", "options": ["true", "false", "hello", "undefined"], "correctIndex": 0, "isTrueFalse": false},
+  {"questionText": "Math.random() always returns an integer between 0 and 1", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true}
+]
