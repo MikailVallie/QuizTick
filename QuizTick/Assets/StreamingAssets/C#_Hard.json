@@ -1,0 +1,22 @@
+[
+    {"questionText": "Which class in C# is used for reflection to obtain metadata about types at runtime?", "options": ["Type", "Assembly", "Activator", "MetaData"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is required to work with pointers in C#?", "options": ["fixed", "pointer", "unsafe", "ref"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which feature in C# allows execution of code at a later time on a different thread?", "options": ["Delegates", "Tasks", "Events", "Attributes"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which class in C# is used to dynamically load and inspect assemblies?", "options": ["Reflection", "Activator", "Assembly", "AppDomain"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "In C#, which type of JIT compilation compiles methods the first time they are called?", "options": ["Pre-JIT", "Econo-JIT", "Normal JIT", "Hybrid JIT"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Attributes in C# provide metadata about program elements?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which keyword prevents further overriding of a virtual method in derived classes?", "options": ["final", "sealed", "override", "lock"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which synchronization construct ensures that only one thread can access a resource at a time?", "options": ["lock", "mutex", "monitor", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which method in the Task Parallel Library waits for multiple tasks to complete?", "options": ["Task.Run()", "Task.Delay()", "Task.WaitAll()", "Task.WhenAny()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which keyword is used in C# to pass arguments by reference?", "options": ["ref", "out", "in", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which design pattern is implemented by the 'yield return' keyword in C#?", "options": ["Observer", "Iterator", "Decorator", "Singleton"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Can an abstract class in C# implement an interface?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which method of the 'GC' class forces garbage collection?", "options": ["GC.Clean()", "GC.Dispose()", "GC.Collect()", "GC.Finalize()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which class in C# provides functionality for dynamic language runtime (DLR)?", "options": ["dynamic", "ExpandoObject", "TypeBuilder", "Activator"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which keyword in C# is used to declare an iterator block?", "options": ["iterator", "yield", "return", "foreach"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which feature allows runtime code generation in C#?", "options": ["Reflection.Emit", "Activator", "AppDomain", "Marshal"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which access modifier allows a class member to be accessible only within the same assembly and also by derived classes?", "options": ["internal", "protected", "protected internal", "private protected"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which keyword is used in C# to ensure a resource is released even if an exception occurs?", "options": ["using", "try-finally", "lock", "checked"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which method is used to dynamically invoke a method using reflection in C#?", "options": ["Invoke()", "Call()", "Execute()", "Run()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword in C# is used to define a block of code where overflow checking is enabled?", "options": ["checked", "unchecked", "fixed", "unsafe"], "correctIndex": 0, "isTrueFalse": false}
+  ]
