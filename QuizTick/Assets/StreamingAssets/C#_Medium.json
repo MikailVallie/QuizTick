@@ -1,0 +1,22 @@
+[
+    {"questionText": "Which keyword is used to declare a method that can be overridden in derived classes?", "options": ["virtual", "abstract", "override", "sealed"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to implement polymorphism in derived classes?", "options": ["override", "extends", "sealed", "static"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Can structs in C# inherit from another struct or class?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+    {"questionText": "Which keyword is used to free unmanaged resources in C#?", "options": ["delete", "dispose", "release", "finalize"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which modifier allows a class to be used only as a base class?", "options": ["sealed", "abstract", "virtual", "internal"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which C# feature allows multiple methods to be called through a single reference?", "options": ["Events", "Delegates", "Interfaces", "Generics"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "LINQ stands for?", "options": ["Language Integrated Query", "Lightweight Indexed Query", "Linked Internal Query", "Logical Input Query"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create a thread in C#?", "options": ["task", "async", "Thread", "new"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which collection guarantees unique elements?", "options": ["List", "Array", "HashSet", "Queue"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which method is called by the Garbage Collector before an object is destroyed?", "options": ["Delete()", "Dispose()", "Finalize()", "Destructor()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Can interfaces in C# have fields?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+    {"questionText": "Which keyword is used to make a variable that cannot be changed after initialization?", "options": ["readonly", "const", "static", "final"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used for asynchronous programming in C#?", "options": ["await", "async", "task", "Both async and await"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to define a generic type in C#?", "options": ["template", "generic", "T", "typename"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which interface must a class implement to support iteration with foreach?", "options": ["IEnumerable", "IEnumerator", "ICollection", "IList"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Is it possible to overload operators in C#?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which access modifier makes a class member visible in the same assembly but not in other assemblies?", "options": ["private", "protected", "internal", "public"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "What is the default access modifier for class members in C#?", "options": ["private", "protected", "internal", "public"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which type of class cannot be instantiated directly?", "options": ["sealed", "abstract", "static", "internal"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to handle resource cleanup automatically in C#?", "options": ["try", "catch", "using", "dispose"], "correctIndex": 2, "isTrueFalse": false}
+  ]
