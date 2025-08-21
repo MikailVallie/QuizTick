@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;   // ✅ Needed for CanvasScaler, GraphicRaycaster, Image, Shadow
+using UnityEngine.UI;   
 using TMPro;
 using SQLite4Unity3d;
 using System.IO;
@@ -15,14 +15,14 @@ public class SignUp : MonoBehaviour
     public TMP_InputField passwordInput;
     public TMP_InputField rePasswordInput;
 
-    public GameObject signUpPanel; // assign RegisterPanel here
-    public GameObject loginPanel;  // assign LoginPanel here
+    public GameObject signUpPanel; 
+    public GameObject loginPanel;  
 
     private string dbPath;
 
     void Start()
     {
-        dbPath = Path.Combine(Application.persistentDataPath, "users.db");
+        dbPath = Path.Combine(Application.streamingAssetsPath, "users.db");
 
         using (var db = new SQLiteConnection(dbPath))
         {
@@ -90,10 +90,8 @@ public class SignUp : MonoBehaviour
         }
     }
 
-    // Updated cool popup with animations, no external UI editing
     private void ShowPopup(string message, float duration = 2f)
     {
-        // Create root object
         GameObject popupObj = new GameObject("PopupMessage");
         var canvas = FindObjectOfType<Canvas>();
         if (canvas == null)
@@ -111,7 +109,6 @@ public class SignUp : MonoBehaviour
         bg.color = new Color(0f, 0f, 0f, 0.8f); // dark semi-transparent
         bg.raycastTarget = false;
 
-        // Round corners via mask sprite (built-in sprite if available)
         Sprite defaultSprite = UnityEngine.Resources.GetBuiltinResource<Sprite>("UISprite.psd");
         if (defaultSprite != null) bg.sprite = defaultSprite;
         bg.type = UnityEngine.UI.Image.Type.Sliced;

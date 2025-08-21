@@ -16,7 +16,7 @@ public class Login : MonoBehaviour
 
     void Start()
     {
-        dbPath = Path.Combine(Application.persistentDataPath, "users.db");
+        dbPath = Path.Combine(Application.streamingAssetsPath, "users.db");
 
         using (var db = new SQLiteConnection(dbPath))
         {
@@ -62,7 +62,7 @@ public class Login : MonoBehaviour
 
     private void LoadMenuScene()
     {
-        SceneManager.LoadScene("MainMenu"); // Replace with your scene name
+        SceneManager.LoadScene("MainMenu"); 
     }
 
     // Popup method same as SignUp
