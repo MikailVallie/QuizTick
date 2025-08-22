@@ -4,7 +4,22 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-   public void PlayGame()
+    private void Start()
+    {
+      MusicManager.Instance.PlayMusic("MainMenu");
+    }
+
+    public void ButtonSound()
+    {
+        SoundManager.Instance.PlaySound("ButtonSound");
+    }
+   
+   public void BackSound()
+   {
+        SoundManager.Instance.PlaySound("BackSound");
+   }
+
+    public void PlayGame()
    {
       SceneManager.LoadSceneAsync("Category");
    }
