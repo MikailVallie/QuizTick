@@ -1,16 +1,26 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class JAVA : MonoBehaviour
+
+public class Difficulty : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     public void Start()
     {
-        SceneManager.LoadSceneAsync("Diffulty Panel");
+
     }
 
-    // Update is called once per frame
+
     public void Update()
     {
-        Application.Quit();
+
+    }
+    
+      public void ButtonSound()
+    {
+        SoundManager.Instance.PlaySound("ButtonSound");
+    }
+
+    public void BackSound()
+    {
+        SoundManager.Instance.PlaySound("BackSound");
     }
 }
