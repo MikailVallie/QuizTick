@@ -1,4 +1,30 @@
 using UnityEngine;
+<<<<<<< HEAD
+
+public class Difficulty : MonoBehaviour
+{
+
+    void Start()
+    {
+
+    }
+
+
+    void Update()
+    {
+
+    }
+    
+    public void ButtonSound()
+    {
+        SoundManager.Instance.PlaySound("ButtonSound");
+    }
+   
+   public void BackSound()
+   {
+        SoundManager.Instance.PlaySound("BackSound");
+   }
+=======
 using UnityEngine.SceneManagement;
 public class JAVA : MonoBehaviour
 {
@@ -13,4 +39,5 @@ public class JAVA : MonoBehaviour
     {
         Application.Quit();
     }
+>>>>>>> 015791744bb9ffa8669bf28b12981db147a2b119
 }
