@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using SQLite4Unity3d;
+using SQLite4Unity3d; 
 using System.IO;
 using System.Linq;
 using BCrypt.Net;
-using UnityEngine.SceneManagement; // Needed for scene loading
+using UnityEngine.SceneManagement; //to change scenes
 
 public class Login : MonoBehaviour
 {
@@ -16,35 +16,42 @@ public class Login : MonoBehaviour
 
     void Start()
     {
+        //full path
         dbPath = Path.Combine(Application.streamingAssetsPath, "users.db");
 
+        //open connection making sure user exists
         using (var db = new SQLiteConnection(dbPath))
         {
-            db.CreateTable<User>(); // Ensure table exists
+            db.CreateTable<User>();
         }
     }
 
+    //called when the player presses the Login button
     public void OnLoginButtonPressed()
     {
         string username = usernameInput.text.Trim();
         string password = passwordInput.text;
 
+        //making sure both fields are filled
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
             ShowPopup("Please enter both username and password.");
             return;
         }
-
+        
+        //open the database and try to find the user
         using (var db = new SQLiteConnection(dbPath))
         {
             var user = db.Table<User>().FirstOrDefault(u => u.Username == username);
 
+            //if no user exists with that username
             if (user == null)
             {
                 ShowPopup("User not found!");
                 return;
             }
-
+            
+            //verifying the password - the input password vs the hashed one in db
             bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.Password);
 
             if (!isPasswordCorrect)
@@ -56,7 +63,7 @@ public class Login : MonoBehaviour
 
         ShowPopup("Login successful!", 1.5f);
 
-        // Load Menu scene after short delay
+        //load Menu scene after short delay
         Invoke(nameof(LoadMenuScene), 1.5f);
     }
 
@@ -65,11 +72,13 @@ public class Login : MonoBehaviour
         SceneManager.LoadScene("MainMenu"); 
     }
 
-    // Popup method same as SignUp
+    //popup method same as SignUp
     private void ShowPopup(string message, float duration = 2f)
     {
         GameObject popupObj = new GameObject("PopupMessage");
         var canvas = FindObjectOfType<Canvas>();
+
+        //if no canvas in the scene, create one
         if (canvas == null)
         {
             GameObject canvasObj = new GameObject("PopupCanvas");
@@ -80,10 +89,12 @@ public class Login : MonoBehaviour
         }
         popupObj.transform.SetParent(canvas.transform, false);
 
+        //background
         var bg = popupObj.AddComponent<UnityEngine.UI.Image>();
         bg.color = new Color(0f, 0f, 0f, 0.8f);
         bg.raycastTarget = false;
 
+        //built in sprite for bg
         Sprite defaultSprite = UnityEngine.Resources.GetBuiltinResource<Sprite>("UISprite.psd");
         if (defaultSprite != null) bg.sprite = defaultSprite;
         bg.type = UnityEngine.UI.Image.Type.Sliced;
@@ -92,6 +103,7 @@ public class Login : MonoBehaviour
         rect.sizeDelta = new Vector2(650, 140);
         rect.anchoredPosition = Vector2.zero;
 
+        //text
         GameObject textObj = new GameObject("PopupText");
         textObj.transform.SetParent(popupObj.transform, false);
         var text = textObj.AddComponent<TextMeshProUGUI>();
@@ -107,6 +119,7 @@ public class Login : MonoBehaviour
         textRect.sizeDelta = rect.sizeDelta;
         textRect.anchoredPosition = Vector2.zero;
 
+        //shadow
         var shadow = textObj.AddComponent<UnityEngine.UI.Shadow>();
         shadow.effectColor = Color.black;
         shadow.effectDistance = new Vector2(2, -2);

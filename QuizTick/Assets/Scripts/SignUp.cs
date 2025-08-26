@@ -1,14 +1,15 @@
 using UnityEngine;
-using UnityEngine.UI;   
-using TMPro;
-using SQLite4Unity3d;
-using System.IO;
+using UnityEngine.UI; 
+using TMPro; //for input fields & text
+using SQLite4Unity3d; //db
+using System.IO; //to work with file paths
 using System.Linq;
-using BCrypt.Net;
+using BCrypt.Net; //for password hashing
 
 public class SignUp : MonoBehaviour
 {
-    public TMP_InputField firstNameInput;
+    //attach in the inspector 
+    public TMP_InputField firstNameInput; 
     public TMP_InputField lastNameInput;
     public TMP_InputField emailInput;
     public TMP_InputField usernameInput;
@@ -22,16 +23,20 @@ public class SignUp : MonoBehaviour
 
     void Start()
     {
+        //full path to the database file "users.db"
         dbPath = Path.Combine(Application.streamingAssetsPath, "users.db");
 
+        //confirming the User table exists (creates it if not already there)
         using (var db = new SQLiteConnection(dbPath))
         {
             db.CreateTable<User>();
         }
     }
 
+    //when the SignUp button is clicked
     public void OnSignUpButtonPressed()
     {
+        //grabing text from the input fields and cleaning up extra spaces
         string fname = firstNameInput.text.Trim();
         string lname = lastNameInput.text.Trim();
         string email = emailInput.text.Trim();
@@ -39,13 +44,14 @@ public class SignUp : MonoBehaviour
         string password = passwordInput.text;
         string rePassword = rePasswordInput.text;
 
-        // Check passwords
+        //check that both passwords match
         if (password != rePassword)
         {
             ShowPopup("Passwords do not match!");
             return;
         }
 
+        //to ensure username and password aren’t empty
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
             ShowPopup("Username and password are required.");
@@ -56,6 +62,7 @@ public class SignUp : MonoBehaviour
 
         using (var db = new SQLiteConnection(dbPath))
         {
+            //first check if username is already in use
             var existingUser = db.Table<User>().Where(u => u.Username == username).FirstOrDefault();
             if (existingUser != null)
             {
@@ -63,6 +70,15 @@ public class SignUp : MonoBehaviour
                 return;
             }
 
+            //then check if email is already in use
+            var existingEmail = db.Table<User>().Where(u => u.Email == email).FirstOrDefault();
+            if (existingEmail != null)
+            {
+                ShowPopup("Email already registered.");
+                return;
+            }
+
+            //both checks pass then create a new user object
             var newUser = new User()
             {
                 FirstName = fname,
@@ -72,6 +88,7 @@ public class SignUp : MonoBehaviour
                 Password = hashedPassword
             };
 
+             //inserting user into db
             db.Insert(newUser);
         }
 
@@ -81,6 +98,7 @@ public class SignUp : MonoBehaviour
         Invoke(nameof(SwitchToLogin), 1f);
     }
 
+     // Switches the UI panels
     private void SwitchToLogin()
     {
         if (signUpPanel != null && loginPanel != null)
@@ -90,10 +108,13 @@ public class SignUp : MonoBehaviour
         }
     }
 
+    //toast notification - popup msg
     private void ShowPopup(string message, float duration = 2f)
     {
         GameObject popupObj = new GameObject("PopupMessage");
         var canvas = FindObjectOfType<Canvas>();
+
+          //if there isnt a canvas that exists yet, create one
         if (canvas == null)
         {
             GameObject canvasObj = new GameObject("PopupCanvas");
@@ -104,11 +125,12 @@ public class SignUp : MonoBehaviour
         }
         popupObj.transform.SetParent(canvas.transform, false);
 
-        // Background panel
+        //background panel
         var bg = popupObj.AddComponent<UnityEngine.UI.Image>();
-        bg.color = new Color(0f, 0f, 0f, 0.8f); // dark semi-transparent
+        bg.color = new Color(0f, 0f, 0f, 0.8f); // dark semi-transparent background
         bg.raycastTarget = false;
 
+        //unity's built-in sprite for the background
         Sprite defaultSprite = UnityEngine.Resources.GetBuiltinResource<Sprite>("UISprite.psd");
         if (defaultSprite != null) bg.sprite = defaultSprite;
         bg.type = UnityEngine.UI.Image.Type.Sliced;
@@ -117,7 +139,7 @@ public class SignUp : MonoBehaviour
         rect.sizeDelta = new Vector2(650, 140);
         rect.anchoredPosition = Vector2.zero;
 
-        // Text
+        //text inside popup
         GameObject textObj = new GameObject("PopupText");
         textObj.transform.SetParent(popupObj.transform, false);
         var text = textObj.AddComponent<TextMeshProUGUI>();
@@ -125,7 +147,7 @@ public class SignUp : MonoBehaviour
         text.fontSize = 36;
         text.alignment = TextAlignmentOptions.Center;
 
-        // Gradient effect by vertex colors
+         //green if success, red if error
         Color topColor = message.Contains("successfully") ? new Color(0.3f, 1f, 0.3f) : new Color(1f, 0.4f, 0.4f);
         Color bottomColor = message.Contains("successfully") ? new Color(0f, 0.6f, 0f) : new Color(0.6f, 0f, 0f);
         text.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
@@ -134,12 +156,12 @@ public class SignUp : MonoBehaviour
         textRect.sizeDelta = rect.sizeDelta;
         textRect.anchoredPosition = Vector2.zero;
 
-        // Shadow effect
+        //a shadow for better visibility
         var shadow = textObj.AddComponent<UnityEngine.UI.Shadow>();
         shadow.effectColor = Color.black;
         shadow.effectDistance = new Vector2(2, -2);
 
-        // Animation: fade + scale
+        //animation controls fade + scale
         CanvasGroup group = popupObj.AddComponent<CanvasGroup>();
         group.alpha = 0f;
         popupObj.transform.localScale = Vector3.one * 0.8f;
@@ -147,12 +169,12 @@ public class SignUp : MonoBehaviour
         StartCoroutine(AnimatePopup(popupObj, group, duration));
     }
 
-    // Coroutine for fade/scale animation
+    //handles fade in/out + scale animation for the popup
     private System.Collections.IEnumerator AnimatePopup(GameObject popup, CanvasGroup group, float duration)
     {
         float t = 0f;
 
-        // Fade in + scale up
+        //fade in + zoom in
         while (t < 0.3f)
         {
             t += Time.deltaTime;
@@ -162,9 +184,10 @@ public class SignUp : MonoBehaviour
             yield return null;
         }
 
+        //stay on screen for given duration
         yield return new WaitForSeconds(duration);
 
-        // Fade out + scale down
+        //fade out + zoom out
         t = 0f;
         while (t < 0.3f)
         {
