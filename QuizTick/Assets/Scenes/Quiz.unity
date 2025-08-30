@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 1057468381}
   - component: {fileID: 1057468380}
   m_Layer: 0
-  m_Name: QuestionBox
+  m_Name: MCQuestionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1532,7 +1532,7 @@ GameObject:
   - component: {fileID: 1060206304}
   - component: {fileID: 1060206303}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TFQuestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2155,7 +2155,7 @@ GameObject:
   - component: {fileID: 1624122896}
   - component: {fileID: 1624122895}
   m_Layer: 0
-  m_Name: T/F
+  m_Name: TF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 1848465385}
   - component: {fileID: 1848465384}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: MCQuestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2885,7 +2885,7 @@ GameObject:
   - component: {fileID: 1879372772}
   - component: {fileID: 1879372771}
   m_Layer: 0
-  m_Name: QuestionBox
+  m_Name: TFQuestionBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
