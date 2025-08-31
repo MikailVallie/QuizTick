@@ -27,8 +27,8 @@ public class QuizManager : MonoBehaviour
     private int currentIndex = 0;
 
 
-    private string selectedCategory;
-    private string selectedDifficulty;
+    public string selectedCategory;
+    public string selectedDifficulty;
 
     private void Start()
     {
