@@ -2007,6 +2007,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239453525}
   m_CullTransparentMesh: 1
+--- !u!1 &1260554560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260554562}
+  - component: {fileID: 1260554561}
+  - component: {fileID: 1260554563}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1260554561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260554560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16deab06a86ff474aac9cdb82536459e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedCategory: 
+  selectedDifficulty: 
+  MultipleChoice: {fileID: 1710623626}
+  MCQuestion: {fileID: 1848465384}
+  Option1Btn: {fileID: 1905775005}
+  Option2Btn: {fileID: 924032345}
+  Option3Btn: {fileID: 1792262746}
+  Option4Btn: {fileID: 936854833}
+  TF: {fileID: 1624122893}
+  TFQuestion: {fileID: 1060206303}
+  TrueBtn: {fileID: 2015447708}
+  FalseBtn: {fileID: 1921575962}
+--- !u!4 &1260554562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260554560}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 359.4553, y: 151.30852, z: 1.9004431}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1260554563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260554560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63755c03ec2dc6649add07bfe59f680f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 748526238}
 --- !u!1 &1480472786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,3 +3676,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 2006933779}
   - {fileID: 1152826918}
+  - {fileID: 1260554562}

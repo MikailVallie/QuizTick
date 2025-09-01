@@ -1,4 +1,5 @@
-[
+{
+  "questions":[
     {"questionText": "Which keyword is used to handle exceptions in Python?", "options": ["try", "catch", "except", "try-except"], "correctIndex": 2, "isTrueFalse": false},
     {"questionText": "Which method is used to add an item to a list?", "options": ["append()", "add()", "push()", "insert()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Dictionaries in Python store data as key-value pairs?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
@@ -20,3 +21,4 @@
     {"questionText": "Which method can be used to sort a list in place?", "options": ["sort()", "order()", "sorted()", "arrange()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which function creates a range of numbers?", "options": ["range()", "list()", "numbers()", "array()"], "correctIndex": 0, "isTrueFalse": false}
   ]
+}

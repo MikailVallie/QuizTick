@@ -1,4 +1,5 @@
-[
+{
+  "questions":[
     {"questionText": "Python is an interpreted language?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
     {"questionText": "Which symbol is used to start a comment in Python?", "options": ["#", "//", "/*", "--"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which function is used to display output in Python?", "options": ["echo()", "print()", "display()", "write()"], "correctIndex": 1, "isTrueFalse": false},
@@ -20,3 +21,4 @@
     {"questionText": "Which keyword is used for conditional branching?", "options": ["if", "switch", "case", "select"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Python was created by Guido van Rossum?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
   ]
+}

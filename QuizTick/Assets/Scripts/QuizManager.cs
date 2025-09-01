@@ -32,9 +32,14 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
+        selectedCategory = GameData.Instance.SelectedCategory;
+        selectedDifficulty = GameData.Instance.SelectedDifficulty;
+
         LoadQuestions();
         ShowQuestion();
     }
+
+
     private void LoadQuestions()
     {
         string fileName = selectedCategory + "_" + selectedDifficulty + ".json";
@@ -98,7 +103,8 @@ public class QuizManager : MonoBehaviour
             for (int i = 0; i < buttons.Length; i++)
             {
                 buttons[i].gameObject.SetActive(i < q.options.Length);
-                buttons[i].GetComponentInChildren<TextMeshPro>().text = q.options[i];
+                //buttons[i].GetComponentInChildren<TextMeshPro>().text = q.options[i];
+                buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = q.options[i];
 
                 int index = i;
                 buttons[i].onClick.RemoveAllListeners();
