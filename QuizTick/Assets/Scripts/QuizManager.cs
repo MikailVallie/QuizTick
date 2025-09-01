@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
+    private int score = 0; // Tracks correct answers
+
 
     [System.Serializable]
     public class Question
@@ -133,6 +135,7 @@ public class QuizManager : MonoBehaviour
         if (selectedIndex == q.correctIndex)
         {
             Debug.Log("Correct!");
+            score++; // Increase score if correct
         }
         else
         {
@@ -141,6 +144,27 @@ public class QuizManager : MonoBehaviour
 
         // Move to next question
         currentIndex++;
-        ShowQuestion();
+
+        if (currentIndex < questions.Count)
+        {
+            ShowQuestion();
+        }
+        else
+        {
+            QuizFinished();
+        }
     }
+private void QuizFinished()
+{
+    Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
+
+    GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
+    if (gameOverUI != null)
+    {
+        gameOverUI.ShowGameOver(score, questions.Count);
+    }
+}
+
+
+
 }
