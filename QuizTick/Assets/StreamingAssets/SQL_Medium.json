@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {"questionText": "With SQL, how do you select all the records from a table named 'People' where the value of the column 'FirstName' starts with an 'a'?", "options": ["SELECT * FROM People WHERE FirstName='%a%'", "SELECT * FROM People WHERE FirstName LIKE 'a%'", "SELECT * FROM People WHERE FirstName='a'", "SELECT * FROM People WHERE FirstName LIKE '%a'"], "correctIndex": 1, "isTrueFalse": false},
   {"questionText": "How do you select all the records from a table named 'Persons' where the 'FirstName' is 'Sibabalwe' and the 'LastName' is 'Rasmeni'?", "options": ["SELECT * FROM People WHERE FirstName<> 'Sibabalwe' AND LastName<> 'Rasmeni'", "SELECT FirstName='Sibabalwe', LastName='Rasmeni' FROM People", "SELECT * FROM People WHERE FirstName='Sibabalwe' AND LastName='Rasmeni'"], "correctIndex": 2, "isTrueFalse": false},
   {"questionText": "The OR operator displays a record if ANY conditions listed are true. The AND operator displays a record if ALL of the conditions listed are true.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
@@ -20,3 +21,4 @@
   {"questionText": "Which SQL statement removes all rows from a table but keeps its structure?", "options": ["DELETE", "TRUNCATE", "DROP", "REMOVE"], "correctIndex": 1, "isTrueFalse": false},
   {"questionText": "Which constraint enforces that values in a column must satisfy a specific condition?", "options": ["UNIQUE", "PRIMARY KEY", "CHECK", "NOT NULL"], "correctIndex": 2, "isTrueFalse": false}
 ]
+}

@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
     {"questionText": "C# is developed by?", "options": ["Oracle", "Microsoft", "Google", "IBM"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "C# is case-sensitive?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
     {"questionText": "Which keyword is used to define a class in C#?", "options": ["struct", "class", "object", "define"], "correctIndex": 1, "isTrueFalse": false},
@@ -20,3 +21,4 @@
     {"questionText": "The '==' operator compares values in C#?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
     {"questionText": "Which namespace is included by default in every C# program?", "options": ["System", "Collections", "IO", "Linq"], "correctIndex": 0, "isTrueFalse": false}
   ]
+}

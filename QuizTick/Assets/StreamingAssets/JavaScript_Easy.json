@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {"questionText": "Which of the following is used to declare a variable in JavaScript?", "options": ["VAR", "LET", "CONST", "ALL OF THE ABOVE"], "correctIndex": 3, "isTrueFalse": false},
   {"questionText": "Which symbol is used for comments in JavaScript (single-line)?", "options": ["//", "<!--", "#", "**"], "correctIndex": 0, "isTrueFalse": false},
   {"questionText": "Which data type is NOT a primitive type in JavaScript?", "options": ["STRING", "BOOLEAN", "OBJECT", "NUMBER"], "correctIndex": 2, "isTrueFalse": false},
@@ -20,3 +21,4 @@
   {"questionText": "What is the correct way to call a function named start()?", "options": ["call start", "start;", "start()", "call.start"], "correctIndex": 2, "isTrueFalse": false},
   {"questionText": "alert() displays a message in the browser.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
 ]
+}

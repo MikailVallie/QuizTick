@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
     {"questionText": "Which keyword is used to declare a method that can be overridden in derived classes?", "options": ["virtual", "abstract", "override", "sealed"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is used to implement polymorphism in derived classes?", "options": ["override", "extends", "sealed", "static"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Can structs in C# inherit from another struct or class?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
@@ -20,3 +21,4 @@
     {"questionText": "Which type of class cannot be instantiated directly?", "options": ["sealed", "abstract", "static", "internal"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Which keyword is used to handle resource cleanup automatically in C#?", "options": ["try", "catch", "using", "dispose"], "correctIndex": 2, "isTrueFalse": false}
   ]
+}

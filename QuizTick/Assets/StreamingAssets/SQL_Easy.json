@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {"questionText": "What does SQL stand for?", "options": ["Structured Query Language", "Strong Question Language", "Structured Question Language", "Strong Query Language"], "correctIndex": 0, "isTrueFalse": false},
   {"questionText": "Which SQL statement is used to extract data from a database?", "options": ["GET", "EXTRACT", "SELECT", "OPEN"], "correctIndex": 2, "isTrueFalse": false},
   {"questionText": "Which SQL statement is used to update data in a database?", "options": ["SAVE AS", "MODIFY", "UPDATE", "EDIT"], "correctIndex": 2, "isTrueFalse": false},
@@ -20,3 +21,4 @@
   {"questionText": "What does RDBMS stand for?", "options": ["Relational Data Backup Management Software", "Remote Database Management Service", "Rapid Data Building & Modeling System", "Relational Database Management System"], "correctIndex": 3, "isTrueFalse": false},
   {"questionText": "Which SQL statement is used to create a database table called 'Customers'?", "options": ["CREATE DATABASE TAB Customers", "CREATE DATABASE TABLE Customers", "CREATE TABLE Customers", "CREATE DB Customers"], "correctIndex": 2, "isTrueFalse": false}
 ]
+}

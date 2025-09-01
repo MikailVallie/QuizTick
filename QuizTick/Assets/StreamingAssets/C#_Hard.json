@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
     {"questionText": "Which class in C# is used for reflection to obtain metadata about types at runtime?", "options": ["Type", "Assembly", "Activator", "MetaData"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is required to work with pointers in C#?", "options": ["fixed", "pointer", "unsafe", "ref"], "correctIndex": 2, "isTrueFalse": false},
     {"questionText": "Which feature in C# allows execution of code at a later time on a different thread?", "options": ["Delegates", "Tasks", "Events", "Attributes"], "correctIndex": 1, "isTrueFalse": false},
@@ -20,3 +21,4 @@
     {"questionText": "Which method is used to dynamically invoke a method using reflection in C#?", "options": ["Invoke()", "Call()", "Execute()", "Run()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword in C# is used to define a block of code where overflow checking is enabled?", "options": ["checked", "unchecked", "fixed", "unsafe"], "correctIndex": 0, "isTrueFalse": false}
   ]
+}

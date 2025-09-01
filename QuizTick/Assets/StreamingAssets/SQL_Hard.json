@@ -1,4 +1,5 @@
-[
+{
+  "questions": [
   {"questionText": "Which window function assigns a unique sequential number to rows starting at 1?", "options": ["RANK()", "ROW_NUMBER()", "DENSE_RANK()", "SEQUENCE()"], "correctIndex": 1, "isTrueFalse": false},
   {"questionText": "A correlated subquery is evaluated once for each row in the outer query.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
   {"questionText": "Which isolation level prevents dirty reads but allows non-repeatable reads?", "options": ["READ COMMITTED", "REPEATABLE READ", "SERIALIZABLE", "READ UNCOMMITTED"], "correctIndex": 0, "isTrueFalse": false},
@@ -20,3 +21,4 @@
   {"questionText": "Which clause is used to specify multiple window definitions in a query?", "options": ["WINDOW", "PARTITION", "DEFINE WINDOW", "OVER"], "correctIndex": 0, "isTrueFalse": false},
   {"questionText": "EXPLAIN can show how a database executes a query.", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
 ]
+}

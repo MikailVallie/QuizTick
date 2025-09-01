@@ -1,22 +1,24 @@
-[
-  {"questionText": "Which method is the entry point of a Java program?", "options": ["start()", "main()", "init()", "run()"], "correctIndex": 1, "isTrueFalse": false},
-  {"questionText": "Java supports multiple inheritance through classes?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
-  {"questionText": "Which package contains the ArrayList class?", "options": ["java.util", "java.io", "java.lang", "java.net"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "Which keyword is used to handle exceptions in Java?", "options": ["try", "catch", "finally", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
-  {"questionText": "Interfaces can have method implementations in Java 8+?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
-  {"questionText": "Which loop is guaranteed to execute at least once?", "options": ["for", "while", "do-while", "foreach"], "correctIndex": 2, "isTrueFalse": false},
-  {"questionText": "Which keyword declares an exception in a method signature?", "options": ["throws", "throw", "exception", "catch"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "Which method is used to compare two strings in Java?", "options": ["==", "compare()", "equals()", "match()"], "correctIndex": 2, "isTrueFalse": false},
-  {"questionText": "Which access modifier allows access within the same package?", "options": ["public", "private", "protected", "default"], "correctIndex": 3, "isTrueFalse": false},
-  {"questionText": "Which keyword creates an object in Java?", "options": ["class", "new", "object", "create"], "correctIndex": 1, "isTrueFalse": false},
-  {"questionText": "Which statement is used to exit a loop prematurely?", "options": ["exit", "break", "continue", "stop"], "correctIndex": 1, "isTrueFalse": false},
-  {"questionText": "Which method returns the length of an array in Java?", "options": ["length()", "size()", "length", "count()"], "correctIndex": 2, "isTrueFalse": false},
-  {"questionText": "Which class is the superclass of all exceptions?", "options": ["Throwable", "Exception", "Error", "Object"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "Which operator is used for logical AND?", "options": ["&&", "&", "||", "|"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "Which keyword prevents a method from being overridden?", "options": ["final", "static", "abstract", "private"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "What does JVM stand for?", "options": ["Java Variable Method", "Java Virtual Machine", "Java Verified Module", "Just Virtual Memory"], "correctIndex": 1, "isTrueFalse": false},
-  {"questionText": "Which data type is used to store a single character?", "options": ["String", "char", "int", "boolean"], "correctIndex": 1, "isTrueFalse": false},
-  {"questionText": "Which method converts a string to an integer?", "options": ["Integer.parseInt()", "String.toInt()", "Integer.toInt()", "Convert.parseInt()"], "correctIndex": 0, "isTrueFalse": false},
-  {"questionText": "A Java constructor can have a return type?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
-  {"questionText": "Which collection allows duplicate elements?", "options": ["Set", "List", "Map", "Queue"], "correctIndex": 1, "isTrueFalse": false}
-]
+{
+  "questions": [
+    {"questionText": "Which method is the entry point of a Java program?", "options": ["start()", "main()", "init()", "run()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Java supports multiple inheritance through classes?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+    {"questionText": "Which package contains the ArrayList class?", "options": ["java.util", "java.io", "java.lang", "java.net"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to handle exceptions in Java?", "options": ["try", "catch", "finally", "All of the above"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Interfaces can have method implementations in Java 8+?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which loop is guaranteed to execute at least once?", "options": ["for", "while", "do-while", "foreach"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which keyword declares an exception in a method signature?", "options": ["throws", "throw", "exception", "catch"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which method is used to compare two strings in Java?", "options": ["==", "compare()", "equals()", "match()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which access modifier allows access within the same package?", "options": ["public", "private", "protected", "default"], "correctIndex": 3, "isTrueFalse": false},
+    {"questionText": "Which keyword creates an object in Java?", "options": ["class", "new", "object", "create"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which statement is used to exit a loop prematurely?", "options": ["exit", "break", "continue", "stop"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which method returns the length of an array in Java?", "options": ["length()", "size()", "length", "count()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which class is the superclass of all exceptions?", "options": ["Throwable", "Exception", "Error", "Object"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which operator is used for logical AND?", "options": ["&&", "&", "||", "|"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword prevents a method from being overridden?", "options": ["final", "static", "abstract", "private"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "What does JVM stand for?", "options": ["Java Variable Method", "Java Virtual Machine", "Java Verified Module", "Just Virtual Memory"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which data type is used to store a single character?", "options": ["String", "char", "int", "boolean"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which method converts a string to an integer?", "options": ["Integer.parseInt()", "String.toInt()", "Integer.toInt()", "Convert.parseInt()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "A Java constructor can have a return type?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+    {"questionText": "Which collection allows duplicate elements?", "options": ["Set", "List", "Map", "Queue"], "correctIndex": 1, "isTrueFalse": false}
+  ]
+}

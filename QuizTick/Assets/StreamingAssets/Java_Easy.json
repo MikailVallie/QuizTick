@@ -1,4 +1,5 @@
-[
+{
+  "questions":[
   {"questionText": "What is Java primarily used for?", "options": ["Web development", "App development", "Both", "None"], "correctIndex": 2, "isTrueFalse": false},
   {"questionText": "Java is platform independent?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
   {"questionText": "Which keyword is used to create a subclass in Java?", "options": ["this", "super", "extends", "implements"], "correctIndex": 2, "isTrueFalse": false},
@@ -20,3 +21,4 @@
   {"questionText": "The '==' operator compares values in Java?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
   {"questionText": "Which package is imported by default in every Java program?", "options": ["java.lang", "java.util", "java.io", "java.net"], "correctIndex": 0, "isTrueFalse": false}
 ]
+}
