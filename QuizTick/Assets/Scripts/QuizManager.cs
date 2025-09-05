@@ -9,7 +9,7 @@ public class QuizManager : MonoBehaviour
     private int score = 0; 
 
     
-    [Timer Settings]
+    [Header ("Timer Settings")]
     public Image timerImage; 
     public float timePerQuestion = 15f; 
     private float timeRemaining; 
