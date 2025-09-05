@@ -5,17 +5,17 @@ using TMPro;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private TextMeshProUGUI scoreText; // Text to show the score
+    [SerializeField] private TextMeshProUGUI scoreText; 
 
     void Start()
     {
         gameOverPanel.SetActive(false);
     }
 
-    // Add score parameters
+        
     public void ShowGameOver(int score, int totalQuestions)
     {
-        gameOverPanel.SetActive(true); // Makes the panel visible
+        gameOverPanel.SetActive(true); 
         scoreText.text = " " + score + " / " + totalQuestions;
     }
 
@@ -31,7 +31,7 @@ public class GameOverUI : MonoBehaviour
     }
     public void OnRetryButton()
 {
-    // Option 1: Reload the current scene
+    
     UnityEngine.SceneManagement.SceneManager.LoadScene(
         UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
     );

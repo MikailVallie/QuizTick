@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    private int score = 0; // Tracks correct answers
+    private int score = 0; 
 
-    // === TIMER VARIABLES === //
+    
     [Header("Timer Settings")]
-    public Image timerImage; // Assign a UI Image (like a circular fill) in Inspector
-    public float timePerQuestion = 15f; // Time limit for each question
-    private float timeRemaining; // Tracks time left for current question
-    private bool isAnswered = false; // Prevents timer from running after an answer is selected
-    // === END TIMER VARIABLES === //
+    public Image timerImage; 
+    public float timePerQuestion = 15f; 
+    private float timeRemaining; 
+    private bool isAnswered = false; 
+    
 
     [System.Serializable]
     public class Question
@@ -44,11 +44,11 @@ public class QuizManager : MonoBehaviour
         selectedDifficulty = GameData.Instance.SelectedDifficulty;
 
         LoadQuestions();
-        // ShowQuestion(); // We'll start the timer and show the question together now
-        StartQuestion(); // New method to start the question and timer
+        // ShowQuestion(); 
+        StartQuestion(); 
     }
 
-    // === NEW METHOD: Starts the question and timer === //
+   
     private void StartQuestion()
     {
         if (currentIndex >= questions.Count)
@@ -59,17 +59,17 @@ public class QuizManager : MonoBehaviour
         }
 
         currentQuestion = questions[currentIndex];
-        ResetTimer(); // Reset the timer for the new question
-        ShowQuestion(); // Show the question UI
+        ResetTimer(); 
+        ShowQuestion(); 
     }
 
-    // === NEW METHOD: Resets the timer for a new question === //
+    
     private void ResetTimer()
     {
         timeRemaining = timePerQuestion;
         isAnswered = false;
         if (timerImage != null)
-            timerImage.fillAmount = 1f; // Reset UI to full
+            timerImage.fillAmount = 1f; 
     }
 
     private void LoadQuestions()
@@ -101,18 +101,18 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    // === UPDATE METHOD: Handles the timer countdown === //
+    
     private void Update()
     {
         if (!isAnswered && questions != null && questions.Count > 0)
         {
             timeRemaining -= Time.deltaTime;
 
-            // Update UI (if timerImage is assigned)
+            
             if (timerImage != null)
                 timerImage.fillAmount = timeRemaining / timePerQuestion;
 
-            // Check if time is up
+            
             if (timeRemaining <= 0f)
             {
                 TimeOut();
@@ -120,29 +120,26 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    // === NEW METHOD: Handles when time runs out === //
+    
     private void TimeOut()
     {
         isAnswered = true;
         Debug.Log("Time's up!");
 
-        // Show the correct answer
+        
         HighlightCorrectAnswer();
 
-        // Move to next question after a delay
-        Invoke("NextQuestion", 1.5f); // 1.5 second delay to see the correct answer
+        
+        Invoke("NextQuestion", 1.5f); 
     }
 
-    // === NEW METHOD: Highlights the correct answer === //
+    
     private void HighlightCorrectAnswer()
     {
-        // This would need implementation based on your UI
-        // For now, just log the correct answer
+        
         Debug.Log("Correct answer was: " + currentQuestion.correctIndex);
 
-        // You could add visual feedback here, like:
-        // - Changing the color of the correct answer button to green
-        // - Showing a "Time's Up!" message
+        
     }
 
     [Header("Multiple Choice UI")]
@@ -165,7 +162,7 @@ public class QuizManager : MonoBehaviour
         }
 
         Question q = questions[currentIndex];
-        currentQuestion = q; // Store current question for timer reference
+        currentQuestion = q; 
 
         if (!q.isTrueFalse)
         {
@@ -201,12 +198,12 @@ public class QuizManager : MonoBehaviour
 
     public void OnAnswerSelected(int selectedIndex)
     {
-        if (isAnswered) return; // Prevent multiple answers
-        isAnswered = true; // Stop the timer
+        if (isAnswered) return; 
+        isAnswered = true; 
 
         Question q = questions[currentIndex];
 
-        // Check if the selected answer is correct
+        
         if (selectedIndex == q.correctIndex)
         {
             Debug.Log("Correct!");
@@ -217,21 +214,21 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Wrong!");
         }
 
-        // Show correct answer
+        
         HighlightCorrectAnswer();
 
-        // Move to next question after a delay
-        Invoke("NextQuestion", 1.5f); // 1.5 second delay to see the result
+        
+        Invoke("NextQuestion", 1.5f); 
     }
 
-    // === NEW METHOD: Handles moving to the next question === //
+    
     private void NextQuestion()
     {
         currentIndex++;
 
         if (currentIndex < questions.Count)
         {
-            StartQuestion(); // Start next question with timer
+            StartQuestion(); 
         }
         else
         {
