@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e5d9fddcccbba624289132a3feed2df0
+guid: 7c2ad6ce0918b75418d7b7fe1a86a18b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6000398823834053158
-    second: Screenshot 2025-08-12 135903_0
+      213: 3071242056294314109
+    second: Easybtn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2025-08-12 135903_0
+      name: Easybtn_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 188
-        height: 53
+        x: 4
+        y: 3
+        width: 233
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad513baaf0d4abca0800000000000000
-      internalID: -6000398823834053158
+      spriteID: d70b9a8c06e3f9a20800000000000000
+      internalID: 3071242056294314109
       vertices: []
       indices: 
       edges: []
@@ -160,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Screenshot 2025-08-12 135903_0: -6000398823834053158
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

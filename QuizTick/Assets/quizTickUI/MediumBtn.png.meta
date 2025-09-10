@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9fbde2742eb9eec44b40142fa02d2b81
+guid: affffe46e1b85c24b893d80096cf8245
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4996859409019741862
-    second: Screenshot 2025-08-13 151134_0
+      213: -2321751105266376847
+    second: MediumBtn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2025-08-13 151134_0
+      name: MediumBtn_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 162
-        height: 47
+        x: 5
+        y: 6
+        width: 233
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a6a0337829685540800000000000000
-      internalID: 4996859409019741862
+      spriteID: 17f1ab1cbab77cfd0800000000000000
+      internalID: -2321751105266376847
       vertices: []
       indices: 
       edges: []
@@ -160,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Screenshot 2025-08-13 151134_0: 4996859409019741862
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
