@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
 {
-    private int score = 0; 
+    private int score = 0;
 
-    
-    [Header ("Timer Settings")]
-    public Image timerImage; 
-    public float timePerQuestion = 15f; 
-    private float timeRemaining; 
-    private bool isAnswered = false; 
-    
+    [Header("Timer Settings")]
+    public Image timerImage;
+    public float timePerQuestion = 15f;
+    private float timeRemaining;
+    private bool isAnswered = false;
 
     [System.Serializable]
     public class Question
@@ -44,11 +42,9 @@ public class QuizManager : MonoBehaviour
         selectedDifficulty = GameData.Instance.SelectedDifficulty;
 
         LoadQuestions();
-        // ShowQuestion(); 
-        StartQuestion(); 
+        StartQuestion();
     }
 
-   
     private void StartQuestion()
     {
         if (currentIndex >= questions.Count)
@@ -59,17 +55,16 @@ public class QuizManager : MonoBehaviour
         }
 
         currentQuestion = questions[currentIndex];
-        ResetTimer(); 
-        ShowQuestion(); 
+        ResetTimer();
+        ShowQuestion();
     }
 
-    
     private void ResetTimer()
     {
         timeRemaining = timePerQuestion;
         isAnswered = false;
         if (timerImage != null)
-            timerImage.fillAmount = 1f; 
+            timerImage.fillAmount = 1f;
     }
 
     private void LoadQuestions()
@@ -84,6 +79,7 @@ public class QuizManager : MonoBehaviour
             QuestionList qList = JsonUtility.FromJson<QuestionList>(json);
             questions = new List<Question>(qList.questions);
 
+            // Shuffle questions
             for (int i = 0; i < questions.Count; i++)
             {
                 Question temp = questions[i];
@@ -101,18 +97,15 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    
     private void Update()
     {
         if (!isAnswered && questions != null && questions.Count > 0)
         {
             timeRemaining -= Time.deltaTime;
 
-            
             if (timerImage != null)
                 timerImage.fillAmount = timeRemaining / timePerQuestion;
 
-            
             if (timeRemaining <= 0f)
             {
                 TimeOut();
@@ -120,26 +113,31 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    
     private void TimeOut()
     {
         isAnswered = true;
         Debug.Log("Time's up!");
 
-        
         HighlightCorrectAnswer();
-
-        
-        Invoke("NextQuestion", 1.5f); 
+        Invoke("NextQuestion", 1.5f);
     }
 
-    
     private void HighlightCorrectAnswer()
     {
-        
         Debug.Log("Correct answer was: " + currentQuestion.correctIndex);
 
-        
+        Button[] buttons = { Option1Btn, Option2Btn, Option3Btn, Option4Btn };
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (i == currentQuestion.correctIndex)
+                buttons[i].image.color = Color.green; 
+        }
+
+        if (currentQuestion.isTrueFalse)
+        {
+            if (currentQuestion.correctIndex == 0) TrueBtn.image.color = Color.green; 
+            else FalseBtn.image.color = Color.green;                                  
+        }
     }
 
     [Header("Multiple Choice UI")]
@@ -162,7 +160,7 @@ public class QuizManager : MonoBehaviour
         }
 
         Question q = questions[currentIndex];
-        currentQuestion = q; 
+        currentQuestion = q;
 
         if (!q.isTrueFalse)
         {
@@ -176,6 +174,9 @@ public class QuizManager : MonoBehaviour
             {
                 buttons[i].gameObject.SetActive(i < q.options.Length);
                 buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = q.options[i];
+
+                buttons[i].image.color = Color.white; 
+
                 int index = i;
                 buttons[i].onClick.RemoveAllListeners();
                 buttons[i].onClick.AddListener(() => OnAnswerSelected(index));
@@ -188,6 +189,9 @@ public class QuizManager : MonoBehaviour
 
             TFQuestion.text = q.questionText;
 
+            TrueBtn.image.color = Color.white; 
+            FalseBtn.image.color = Color.white; 
+
             TrueBtn.onClick.RemoveAllListeners();
             FalseBtn.onClick.RemoveAllListeners();
 
@@ -198,37 +202,57 @@ public class QuizManager : MonoBehaviour
 
     public void OnAnswerSelected(int selectedIndex)
     {
-        if (isAnswered) return; 
-        isAnswered = true; 
+        if (isAnswered) return;
+        isAnswered = true;
 
         Question q = questions[currentIndex];
+        Button[] buttons = { Option1Btn, Option2Btn, Option3Btn, Option4Btn };
 
-        
-        if (selectedIndex == q.correctIndex)
+        if (!q.isTrueFalse)
         {
-            Debug.Log("Correct!");
-            score++;
+            if (selectedIndex == q.correctIndex)
+            {
+                Debug.Log("Correct!");
+                score++;
+                buttons[selectedIndex].image.color = Color.green; 
+            }
+            else
+            {
+                Debug.Log("Wrong!");
+                buttons[selectedIndex].image.color = Color.red;   
+                buttons[q.correctIndex].image.color = Color.green; 
+            }
         }
         else
         {
-            Debug.Log("Wrong!");
+            if (selectedIndex == q.correctIndex)
+            {
+                Debug.Log("Correct!");
+                score++;
+                if (selectedIndex == 0) TrueBtn.image.color = Color.green; 
+                else FalseBtn.image.color = Color.green;                  
+            }
+            else
+            {
+                Debug.Log("Wrong!");
+                if (selectedIndex == 0) TrueBtn.image.color = Color.red;   
+                else FalseBtn.image.color = Color.red;                    
+
+                if (q.correctIndex == 0) TrueBtn.image.color = Color.green;
+                else FalseBtn.image.color = Color.green;                   
+            }
         }
 
-        
-        HighlightCorrectAnswer();
-
-        
-        Invoke("NextQuestion", 1.5f); 
+        Invoke("NextQuestion", 1.5f);
     }
 
-    
     private void NextQuestion()
     {
         currentIndex++;
 
         if (currentIndex < questions.Count)
         {
-            StartQuestion(); 
+            StartQuestion();
         }
         else
         {
