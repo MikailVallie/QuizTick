@@ -19,6 +19,21 @@
     {"questionText": "Which keyword is used to start a module import?", "options": ["require", "import", "include", "module"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Which operator is used for logical AND?", "options": ["and", "&&", "&", "AND"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which method can be used to sort a list in place?", "options": ["sort()", "order()", "sorted()", "arrange()"], "correctIndex": 0, "isTrueFalse": false},
-    {"questionText": "Which function creates a range of numbers?", "options": ["range()", "list()", "numbers()", "array()"], "correctIndex": 0, "isTrueFalse": false}
+    {"questionText": "Which function creates a range of numbers?", "options": ["range()", "list()", "numbers()", "array()"], "correctIndex": 0, "isTrueFalse": false},
+
+    {"questionText": "Which function returns the smallest value in a list?", "options": ["min()", "lowest()", "smallest()", "least()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to continue a loop?", "options": ["break", "continue", "skip", "next"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "A dictionary key must be unique?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which function is used to get the ASCII value of a character?", "options": ["ord()", "ascii()", "char()", "ordValue()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function converts a character code to a string?", "options": ["str()", "ord()", "chr()", "char()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which function returns the number of items in a list?", "options": ["len()", "size()", "count()", "items()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create a new module?", "options": ["def", "module", "import", "package"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which method is used to replace text in strings?", "options": ["replace()", "sub()", "change()", "update()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python variables can change type at runtime?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for logical OR?", "options": ["or", "||", "|", "OR"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which method adds elements from another list?", "options": ["extend()", "append()", "join()", "concat()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function checks memory address of a variable?", "options": ["id()", "addr()", "address()", "loc()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python supports operator overloading?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for membership testing?", "options": ["in", "has", "contains", "=="], "correctIndex": 0, "isTrueFalse": false}
   ]
 }

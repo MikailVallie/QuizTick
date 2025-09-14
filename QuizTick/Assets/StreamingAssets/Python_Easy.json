@@ -19,6 +19,30 @@
     {"questionText": "Strings in Python are immutable?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
     {"questionText": "Which operator is used for division in Python?", "options": ["/", "\\", "÷", "%"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is used for conditional branching?", "options": ["if", "switch", "case", "select"], "correctIndex": 0, "isTrueFalse": false},
-    {"questionText": "Python was created by Guido van Rossum?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
+    {"questionText": "Python was created by Guido van Rossum?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+
+    {"questionText": "Which function converts a number to a string?", "options": ["int()", "str()", "toString()", "convert()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which data type is used for whole numbers?", "options": ["float", "int", "str", "bool"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Python code files are saved with which extension?", "options": [".txt", ".py", ".java", ".c"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to end a loop iteration early?", "options": ["stop", "exit", "break", "return"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Lists in Python are ordered?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which symbol is used for string concatenation?", "options": ["&", "+", "*", ","], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which function returns the smallest number?", "options": ["smallest()", "min()", "minValue()", "lowest()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Booleans in Python can only be True or False?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which keyword is used to exit a function?", "options": ["return", "exit", "stop", "quit"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python supports dynamic typing?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which function converts a string to lowercase?", "options": ["lower()", "toLower()", "down()", "small()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which operator is used for modulo?", "options": ["/", "%", "//", "**"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which function returns the maximum of numbers?", "options": ["max()", "highest()", "big()", "largest()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python supports comments using #?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which data type is used for decimals?", "options": ["float", "int", "double", "decimal"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create a conditional?", "options": ["if", "case", "switch", "condition"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function converts text to uppercase?", "options": ["upper()", "toUpper()", "big()", "caps()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function adds a value to the end of a list?", "options": ["add()", "append()", "insert()", "push()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which operator is used for equality comparison?", "options": ["==", "=", "!=", "equals"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which method removes all whitespace?", "options": ["strip()", "trim()", "cut()", "clean()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to define a class?", "options": ["object", "class", "struct", "type"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which function gives the absolute value?", "options": ["abs()", "absolute()", "fabs()", "val()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Python can run on multiple operating systems?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
   ]
 }
