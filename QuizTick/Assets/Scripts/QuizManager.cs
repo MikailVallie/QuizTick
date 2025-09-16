@@ -218,13 +218,17 @@ public class QuizManager : MonoBehaviour
             {
                 Debug.Log("Correct!");
                 score++;
-                buttons[selectedIndex].image.color = Color.green; 
+                buttons[selectedIndex].image.color = Color.green;
+
+                SoundManager.Instance.PlaySound("CorrectAnswer");
             }
             else
             {
                 Debug.Log("Wrong!");
-                buttons[selectedIndex].image.color = Color.red;   
-                buttons[q.correctIndex].image.color = Color.green; 
+                buttons[selectedIndex].image.color = Color.red;
+                buttons[q.correctIndex].image.color = Color.green;
+
+                SoundManager.Instance.PlaySound("IncorrectAnswer");
             }
         }
         else
@@ -233,17 +237,21 @@ public class QuizManager : MonoBehaviour
             {
                 Debug.Log("Correct!");
                 score++;
-                if (selectedIndex == 0) TrueBtn.image.color = Color.green; 
-                else FalseBtn.image.color = Color.green;                  
+                if (selectedIndex == 0) TrueBtn.image.color = Color.green;
+                else FalseBtn.image.color = Color.green;
+
+                SoundManager.Instance.PlaySound("CorrectAnswer");
             }
             else
             {
                 Debug.Log("Wrong!");
-                if (selectedIndex == 0) TrueBtn.image.color = Color.red;   
-                else FalseBtn.image.color = Color.red;                    
+                if (selectedIndex == 0) TrueBtn.image.color = Color.red;
+                else FalseBtn.image.color = Color.red;
 
                 if (q.correctIndex == 0) TrueBtn.image.color = Color.green;
-                else FalseBtn.image.color = Color.green;                   
+                else FalseBtn.image.color = Color.green;
+                
+                SoundManager.Instance.PlaySound("IncorrectAnswer");
             }
         }
 
