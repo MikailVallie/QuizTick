@@ -20,7 +20,6 @@
     {"questionText": "Which exception is raised when a key is not found in a dictionary?", "options": ["KeyNotFoundError", "NoKeyError", "KeyError", "ValueError"], "correctIndex": 2, "isTrueFalse": false},
     {"questionText": "Which operator is used for bitwise XOR in Python?", "options": ["^", "^^", "xor", "!="], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Python supports method overloading?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
-
     {"questionText": "Which module is used for unit testing?", "options": ["unittest", "pytest", "doctest", "test"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which decorator marks a static method?", "options": ["@staticmethod", "@class", "@static", "@classmethod"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which operator is used for floor division?", "options": ["//", "/", "%", "\\"], "correctIndex": 0, "isTrueFalse": false},
@@ -33,6 +32,23 @@
     {"questionText": "Which Python keyword is used for defining an interface?", "options": ["interface", "abstract", "No keyword", "protocol"], "correctIndex": 2, "isTrueFalse": false},
     {"questionText": "Which method checks if a string starts with a prefix?", "options": ["startswith()", "begin()", "prefix()", "hasPrefix()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which method checks if a string ends with a suffix?", "options": ["endswith()", "finish()", "suffix()", "hasSuffix()"], "correctIndex": 0, "isTrueFalse": false},
-    {"questionText": "Which operator unpacks iterables?", "options": ["*", "**", "&", "@"], "correctIndex": 0, "isTrueFalse": false}
+    {"questionText": "Which operator unpacks iterables?", "options": ["*", "**", "&", "@"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which module provides support for working with CSV files?", "options": ["csv", "file", "pandas", "reader"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function is used to evaluate a string as Python code?", "options": ["exec()", "eval()", "run()", "interpret()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which statement is used to create a virtual environment?", "options": ["python -m venv", "pip install venv", "venv create", "virtualenv start"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used with async functions?", "options": ["async", "await", "yield", "defer"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which operator is used for bitwise shift left?", "options": ["<<", ">>", "<", ">"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which Python library is mainly used for machine learning?", "options": ["scikit-learn", "numpy", "matplotlib", "os"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which special method is used to make objects iterable?", "options": ["__iter__", "__next__", "__call__", "__iterable__"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which statement is used to declare an asynchronous context manager?", "options": ["async with", "await with", "with async", "async context"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which method returns a shallow copy of a list?", "options": ["copy()", "clone()", "list.copy()", "duplicate()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which exception is raised when accessing an undefined variable?", "options": ["NameError", "ValueError", "KeyError", "TypeError"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which library provides tools for numerical computation?", "options": ["numpy", "math", "decimal", "statistics"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which module is used to serialize and deserialize Python objects?", "options": ["pickle", "json", "marshal", "serializer"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function is used to get the current working directory?", "options": ["os.getcwd()", "os.path()", "os.currentdir()", "path.cwd()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which module is used for hashing algorithms like MD5 or SHA?", "options": ["hashlib", "crypto", "security", "md5"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to create an alias when importing modules?", "options": ["alias", "as", "with", "rename"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which built-in function returns an iterator?", "options": ["iter()", "next()", "map()", "generator()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which module provides tools for working with system-specific parameters?", "options": ["sys", "os", "platform", "env"], "correctIndex": 0, "isTrueFalse": false}
   ]
 }

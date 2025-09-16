@@ -20,7 +20,6 @@
     {"questionText": "Which operator is used for division in Python?", "options": ["/", "\\", "÷", "%"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is used for conditional branching?", "options": ["if", "switch", "case", "select"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Python was created by Guido van Rossum?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
-
     {"questionText": "Which function converts a number to a string?", "options": ["int()", "str()", "toString()", "convert()"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Which data type is used for whole numbers?", "options": ["float", "int", "str", "bool"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Python code files are saved with which extension?", "options": [".txt", ".py", ".java", ".c"], "correctIndex": 1, "isTrueFalse": false},
@@ -43,6 +42,13 @@
     {"questionText": "Which method removes all whitespace?", "options": ["strip()", "trim()", "cut()", "clean()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is used to define a class?", "options": ["object", "class", "struct", "type"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Which function gives the absolute value?", "options": ["abs()", "absolute()", "fabs()", "val()"], "correctIndex": 0, "isTrueFalse": false},
-    {"questionText": "Python can run on multiple operating systems?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true}
+    {"questionText": "Python can run on multiple operating systems?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which function returns the number of items in a dictionary?", "options": ["count()", "len()", "size()", "length()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Python supports recursion?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which keyword is used to define an anonymous function?", "options": ["lambda", "def", "function", "anon"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which operator is used for floor division?", "options": ["/", "//", "%", "\\"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which built-in function converts text into a list of characters?", "options": ["chars()", "list()", "split()", "array()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Python identifiers can start with a number?", "options": ["True", "False"], "correctIndex": 1, "isTrueFalse": true},
+    {"questionText": "Which keyword is used to define a module import?", "options": ["import", "include", "require", "use"], "correctIndex": 0, "isTrueFalse": false}
   ]
 }

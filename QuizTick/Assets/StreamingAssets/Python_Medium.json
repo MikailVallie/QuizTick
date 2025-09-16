@@ -20,7 +20,6 @@
     {"questionText": "Which operator is used for logical AND?", "options": ["and", "&&", "&", "AND"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which method can be used to sort a list in place?", "options": ["sort()", "order()", "sorted()", "arrange()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which function creates a range of numbers?", "options": ["range()", "list()", "numbers()", "array()"], "correctIndex": 0, "isTrueFalse": false},
-
     {"questionText": "Which function returns the smallest value in a list?", "options": ["min()", "lowest()", "smallest()", "least()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which keyword is used to continue a loop?", "options": ["break", "continue", "skip", "next"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "A dictionary key must be unique?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
@@ -34,6 +33,22 @@
     {"questionText": "Which method adds elements from another list?", "options": ["extend()", "append()", "join()", "concat()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Which function checks memory address of a variable?", "options": ["id()", "addr()", "address()", "loc()"], "correctIndex": 0, "isTrueFalse": false},
     {"questionText": "Python supports operator overloading?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
-    {"questionText": "Which operator is used for membership testing?", "options": ["in", "has", "contains", "=="], "correctIndex": 0, "isTrueFalse": false}
+    {"questionText": "Which operator is used for membership testing?", "options": ["in", "has", "contains", "=="], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which method removes all items from a list?", "options": ["clear()", "delete()", "empty()", "removeAll()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which built-in function returns a sorted list from an iterable?", "options": ["sort()", "sorted()", "arrange()", "order()"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Python supports multiple inheritance?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for identity comparison?", "options": ["is", "==", "equals", "==="], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function returns the Unicode string representation of an object?", "options": ["repr()", "unicode()", "str()", "toString()"], "correctIndex": 2, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to define a generator?", "options": ["gen", "yield", "generator", "async"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Sets in Python are unordered?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which operator is used for exponentiation?", "options": ["^", "**", "pow", "exp"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which module provides mathematical functions like sin and cos?", "options": ["cmath", "math", "trig", "numbers"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which function returns all keys of a dictionary?", "options": ["keys()", "getKeys()", "allKeys()", "dictKeys()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which function converts a list of tuples into a dictionary?", "options": ["dict()", "map()", "zip()", "pair()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to handle exceptions?", "options": ["try", "except", "catch", "error"], "correctIndex": 1, "isTrueFalse": false},
+    {"questionText": "Which function returns the ASCII code of a character?", "options": ["ord()", "ascii()", "char()", "chr()"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Which keyword is used to define a class method?", "options": ["@classmethod", "@staticmethod", "method", "function"], "correctIndex": 0, "isTrueFalse": false},
+    {"questionText": "Frozen sets in Python are immutable?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true},
+    {"questionText": "Which module is used to work with random numbers?", "options": ["random", "math", "numbers", "rng"], "correctIndex": 0, "isTrueFalse": false}
   ]
 }
