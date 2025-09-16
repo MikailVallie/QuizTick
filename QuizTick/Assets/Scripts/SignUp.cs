@@ -108,13 +108,13 @@ public class SignUp : MonoBehaviour
         }
     }
 
-    //toast notification - popup msg
+        //toast notification - popup msg
     private void ShowPopup(string message, float duration = 2f)
     {
         GameObject popupObj = new GameObject("PopupMessage");
         var canvas = FindObjectOfType<Canvas>();
 
-          //if there isnt a canvas that exists yet, create one
+        //if there isnt a canvas that exists yet, create one
         if (canvas == null)
         {
             GameObject canvasObj = new GameObject("PopupCanvas");
@@ -127,44 +127,49 @@ public class SignUp : MonoBehaviour
 
         //background panel
         var bg = popupObj.AddComponent<UnityEngine.UI.Image>();
-        bg.color = new Color(0f, 0f, 0f, 0.8f); // dark semi-transparent background
-        bg.raycastTarget = false;
+        bg.color = new Color(0f, 0f, 0f, 0.7f); // semi-transparent dark
 
-        //unity's built-in sprite for the background
+        //unity's built-in sprite for rounded corners
         Sprite defaultSprite = UnityEngine.Resources.GetBuiltinResource<Sprite>("UISprite.psd");
         if (defaultSprite != null) bg.sprite = defaultSprite;
         bg.type = UnityEngine.UI.Image.Type.Sliced;
 
         RectTransform rect = popupObj.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(650, 140);
-        rect.anchoredPosition = Vector2.zero;
+        rect.sizeDelta = new Vector2(600, 120);
+        rect.anchoredPosition = new Vector2(0, -Screen.height / 3); // bottom-center
+
+        //add outline + shadow to panel
+        var outline = popupObj.AddComponent<UnityEngine.UI.Outline>();
+        outline.effectColor = new Color(0, 0, 0, 0.5f);
+        outline.effectDistance = new Vector2(4, -4);
 
         //text inside popup
         GameObject textObj = new GameObject("PopupText");
         textObj.transform.SetParent(popupObj.transform, false);
         var text = textObj.AddComponent<TextMeshProUGUI>();
         text.text = message;
-        text.fontSize = 36;
+        text.fontSize = 28;
         text.alignment = TextAlignmentOptions.Center;
+        text.enableWordWrapping = true;
 
-         //green if success, red if error
-        Color topColor = message.Contains("successfully") ? new Color(0.3f, 1f, 0.3f) : new Color(1f, 0.4f, 0.4f);
-        Color bottomColor = message.Contains("successfully") ? new Color(0f, 0.6f, 0f) : new Color(0.6f, 0f, 0f);
+        //green if success, red if error
+        Color topColor = message.Contains("successfully") ? new Color(0.1f, 0.9f, 0.1f) : new Color(1f, 0.3f, 0.3f);
+        Color bottomColor = message.Contains("successfully") ? new Color(0f, 0.5f, 0f) : new Color(0.6f, 0f, 0f);
         text.colorGradient = new VertexGradient(topColor, topColor, bottomColor, bottomColor);
 
         RectTransform textRect = text.GetComponent<RectTransform>();
-        textRect.sizeDelta = rect.sizeDelta;
+        textRect.sizeDelta = rect.sizeDelta - new Vector2(40, 20);
         textRect.anchoredPosition = Vector2.zero;
 
-        //a shadow for better visibility
+        //a subtle text shadow
         var shadow = textObj.AddComponent<UnityEngine.UI.Shadow>();
-        shadow.effectColor = Color.black;
+        shadow.effectColor = new Color(0, 0, 0, 0.6f);
         shadow.effectDistance = new Vector2(2, -2);
 
         //animation controls fade + scale
         CanvasGroup group = popupObj.AddComponent<CanvasGroup>();
         group.alpha = 0f;
-        popupObj.transform.localScale = Vector3.one * 0.8f;
+        popupObj.transform.localScale = Vector3.one * 0.95f;
 
         StartCoroutine(AnimatePopup(popupObj, group, duration));
     }
@@ -180,7 +185,7 @@ public class SignUp : MonoBehaviour
             t += Time.deltaTime;
             float progress = t / 0.3f;
             group.alpha = Mathf.SmoothStep(0f, 1f, progress);
-            popup.transform.localScale = Vector3.one * Mathf.SmoothStep(0.8f, 1f, progress);
+            popup.transform.localScale = Vector3.one * Mathf.SmoothStep(0.95f, 1f, progress);
             yield return null;
         }
 
@@ -194,7 +199,7 @@ public class SignUp : MonoBehaviour
             t += Time.deltaTime;
             float progress = t / 0.3f;
             group.alpha = Mathf.SmoothStep(1f, 0f, progress);
-            popup.transform.localScale = Vector3.one * Mathf.SmoothStep(1f, 0.8f, progress);
+            popup.transform.localScale = Vector3.one * Mathf.SmoothStep(1f, 0.95f, progress);
             yield return null;
         }
 
