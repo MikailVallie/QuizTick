@@ -88,6 +88,10 @@ public class QuizManager : MonoBehaviour
                 questions[randIndex] = temp;
             }
 
+            // Limit to 20 questions 
+            int maxQuestions = Mathf.Min(20, questions.Count);
+            questions = questions.GetRange(0, maxQuestions);
+
             Debug.Log("Loaded " + questions.Count + " questions from " + fileName);
         }
         else
