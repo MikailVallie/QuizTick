@@ -22,8 +22,10 @@ public class Login : MonoBehaviour
         //open connection making sure user exists
         using (var db = new SQLiteConnection(dbPath))
         {
-            db.CreateTable<User>();
+             db.CreateTable<User>();
+             db.CreateTable<Score>();
         }
+
     }
 
     //called when the player presses the Login button
@@ -38,7 +40,7 @@ public class Login : MonoBehaviour
             ShowPopup("Please enter both username and password.");
             return;
         }
-        
+
         //open the database and try to find the user
         using (var db = new SQLiteConnection(dbPath))
         {
@@ -50,8 +52,8 @@ public class Login : MonoBehaviour
                 ShowPopup("User not found!");
                 return;
             }
-            
-            //verifying the password - the input password vs the hashed one in db
+
+            // ... after verifying password
             bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.Password);
 
             if (!isPasswordCorrect)
@@ -59,17 +61,22 @@ public class Login : MonoBehaviour
                 ShowPopup("Incorrect password!");
                 return;
             }
+
+            // store logged-in username for use in other scenes
+            GameSession.LoggedInUsername = username;
+            Debug.Log("Logged in as: " + GameSession.LoggedInUsername);
+
+            ShowPopup("Login successful!", 1.5f);
+
+            //load Menu scene after short delay
+            Invoke(nameof(LoadMenuScene), 1.5f);
         }
-
-        ShowPopup("Login successful!", 1.5f);
-
-        //load Menu scene after short delay
-        Invoke(nameof(LoadMenuScene), 1.5f);
     }
+    
 
     private void LoadMenuScene()
     {
-        SceneManager.LoadScene("MainMenu"); 
+        SceneManager.LoadScene("MainMenu");
     }
 
         //popup method same as SignUp
