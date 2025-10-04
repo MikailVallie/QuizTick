@@ -272,14 +272,24 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    private void QuizFinished()
-    {
-        Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
+ private void QuizFinished()
+{
+    Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
 
-        GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
-        if (gameOverUI != null)
-        {
-            gameOverUI.ShowGameOver(score, questions.Count);
-        }
+    if (!string.IsNullOrEmpty(GameSession.LoggedInUsername))
+    {
+        ScoreManager.SaveScore(GameSession.LoggedInUsername,
+                               selectedCategory,      
+                               selectedDifficulty,     
+                               score);
     }
+
+    GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
+    if (gameOverUI != null)
+    {
+        gameOverUI.ShowGameOver(score, questions.Count);
+    }
+}
+
+
 }

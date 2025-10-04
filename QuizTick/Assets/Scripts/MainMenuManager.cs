@@ -1,20 +1,24 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Panels")]
     public GameObject mainMenuPanel;
     public GameObject profilePanel;
+    public void OnSignOutButton()
+    {
+        GameSession.SignOut();
 
-    // Show profile panel, hide main menu
+        SceneManager.LoadScene(0); 
+    }
+
     public void ShowProfile()
-{
-    mainMenuPanel.SetActive(false);
-    profilePanel.SetActive(true); // must be active first
-}
+    {
+        mainMenuPanel.SetActive(false);
+        profilePanel.SetActive(true);
+    }
 
-
-    // Go back to main menu
     public void ShowMainMenu()
     {
         profilePanel.SetActive(false);

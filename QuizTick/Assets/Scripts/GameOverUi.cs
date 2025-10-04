@@ -13,11 +13,14 @@ public class GameOverUI : MonoBehaviour
     }
 
         
-    public void ShowGameOver(int score, int totalQuestions)
-    {
-        gameOverPanel.SetActive(true); 
-        scoreText.text = " " + score + " / " + totalQuestions;
-    }
+public void ShowGameOver(int score, int totalQuestions)
+{
+    gameOverPanel.SetActive(true); 
+
+    scoreText.text = $"{score} / {totalQuestions}";
+}
+
+
 
 
     public void OnLeaderboardButton()
