@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void ShowProfile()
     {
-        mainMenuPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
         profilePanel.SetActive(true);
     }
 
