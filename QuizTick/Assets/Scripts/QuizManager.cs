@@ -272,24 +272,127 @@ public class QuizManager : MonoBehaviour
         }
     }
 
- private void QuizFinished()
-{
-    Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
+    //public class QuizManager : MonoBehaviour
+    //{
+        public static QuizManager Instance;
+        //private QuizInitializer initializer;
+        private string currentPlayerId;
+        private string currentCategory;
+        private string currentDifficulty;
 
-    if (!string.IsNullOrEmpty(GameSession.LoggedInUsername))
+        void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                //initializer = new QuizInitializer();
+        }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void SetCurrentGame(string category, string difficulty, string playerId)
+        {
+            currentCategory = category;
+            currentDifficulty = difficulty;
+            currentPlayerId = playerId;
+        }
+
+        public void EndGame(int finalScore)
+        {
+            LeaderboardManager leaderboard = FindAnyObjectByType<LeaderboardManager>();
+            if (leaderboard != null)
+            {
+                leaderboard.SavePlayerScore(currentPlayerId, currentCategory, currentDifficulty, finalScore);
+            }
+
+            // Load game over screen
+            //SceneLoader.LoadScene("GameOver");
+        }
+    //}
+
+
+
+
+    private void QuizFinished()
     {
-        ScoreManager.SaveScore(GameSession.LoggedInUsername,
-                               selectedCategory,      
-                               selectedDifficulty,     
-                               score);
+        Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
+
+        // Save the score using LeaderboardManager
+        if (!string.IsNullOrEmpty(GameSession.LoggedInUsername))
+        {
+            Debug.Log($"=== ATTEMPTING TO SAVE SCORE ===");
+            Debug.Log($"Player: {GameSession.LoggedInUsername}");
+            Debug.Log($"Category: {selectedCategory}");
+            Debug.Log($"Difficulty: {selectedDifficulty}");
+            Debug.Log($"Score: {score}");
+
+            // Find the LeaderboardManager and save the score
+            LeaderboardManager leaderboard = FindObjectOfType<LeaderboardManager>();
+            if (leaderboard != null)
+            {
+                leaderboard.SavePlayerScore(GameSession.LoggedInUsername, selectedCategory, selectedDifficulty, score);
+                Debug.Log("? Score saved to LeaderboardManager!");
+            }
+            else
+            {
+                Debug.LogError("? LeaderboardManager not found in scene!");
+
+                // Fallback: Save directly using the direct method
+                SaveScoreDirectly(GameSession.LoggedInUsername, selectedCategory, selectedDifficulty, score);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No user logged in - score not saved");
+        }
+
+        GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
+        if (gameOverUI != null)
+        {
+            gameOverUI.ShowGameOver(score, questions.Count);
+        }
     }
 
-    GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
-    if (gameOverUI != null)
+    // Fallback method to save score directly if LeaderboardManager is not found
+    private void SaveScoreDirectly(string playerName, string category, string difficulty, int scoreValue)
     {
-        gameOverUI.ShowGameOver(score, questions.Count);
+        try
+        {
+            string scoresFilePath = Path.Combine(Application.streamingAssetsPath, "player_scores.json");
+            ScoreData scoreData;
+
+            // Load existing scores
+            if (File.Exists(scoresFilePath))
+            {
+                string jsonData = File.ReadAllText(scoresFilePath);
+                scoreData = JsonUtility.FromJson<ScoreData>(jsonData);
+            }
+            else
+            {
+                scoreData = new ScoreData();
+            }
+
+            // Add new score
+            PlayerScore newScore = new PlayerScore(playerName, category, difficulty, scoreValue);
+            scoreData.AddOrUpdateScore(newScore);
+
+            // Save back to file
+            string updatedJson = JsonUtility.ToJson(scoreData, true);
+            File.WriteAllText(scoresFilePath, updatedJson);
+
+            Debug.Log($"? Score saved directly: {playerName} - {scoreValue}");
+            Debug.Log($"? Total scores now: {scoreData.scores.Count}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Error saving score directly: {e.Message}");
+        }
     }
-}
 
 
 }
+    

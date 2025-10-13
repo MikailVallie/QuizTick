@@ -1,0 +1,39 @@
+{
+    "scores": [
+        {
+            "playerName": "lulu",
+            "category": "Java",
+            "difficulty": "Easy",
+            "score": 7,
+            "dateAchieved": "2025-10-12 17:10:39"
+        },
+        {
+            "playerName": "baya",
+            "category": "Java",
+            "difficulty": "Easy",
+            "score": 16,
+            "dateAchieved": "2025-10-13 09:33:57"
+        },
+        {
+            "playerName": "sphesh",
+            "category": "Java",
+            "difficulty": "Easy",
+            "score": 16,
+            "dateAchieved": "2025-10-13 13:25:39"
+        },
+        {
+            "playerName": "lululemon",
+            "category": "Java",
+            "difficulty": "Easy",
+            "score": 12,
+            "dateAchieved": "2025-10-13 13:32:02"
+        },
+        {
+            "playerName": "inako",
+            "category": "Java",
+            "difficulty": "Easy",
+            "score": 15,
+            "dateAchieved": "2025-10-13 13:36:18"
+        }
+    ]
+}

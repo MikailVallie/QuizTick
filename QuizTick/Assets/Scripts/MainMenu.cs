@@ -62,4 +62,17 @@ public class MainMenu : MonoBehaviour
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
     }
 
+    public class InitializeMainMenu : MonoBehaviour
+    {
+        public void ShowLeaderboard()
+        {
+            SceneManager.LoadScene("Leaderboard");
+        }
+
+        public void BackToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+
 }

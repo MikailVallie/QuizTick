@@ -24,4 +24,14 @@ public class MainMenuManager : MonoBehaviour
         profilePanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
+
+    public void ShowLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
