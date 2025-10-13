@@ -308,7 +308,7 @@ public class QuizManager : MonoBehaviour
             MultipleChoice.SetActive(false);
             TF.SetActive(false);
             SetPowerUpButtonsActive(false);
-            scoreText.SetActive(false);
+        
 
             funFactPanel.SetActive(true);
             funFactText.text = "Fun Fact" + currentQuestion.funFact;
