@@ -8,8 +8,8 @@ public class QuizManager : MonoBehaviour
 {
     private int score = 0;
     private int streakCount = 0;
-    private int wrongCount = 0;
-    
+    private bool isGameOver = false;
+
     [Header("UI Elements")]
     public TextMeshProUGUI scoreText;
 
@@ -23,6 +23,7 @@ public class QuizManager : MonoBehaviour
     private int freezeCount = 3;
     private bool addTimeUsed = false;
     private bool isTimeFrozen = false;
+
     public Button hintButton;
     public Button freezeTimeButton;
     public Button addTimeButton;
@@ -31,6 +32,7 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI hintCounterText;
     public TextMeshProUGUI freezeCounterText;
     public TextMeshProUGUI addTimeCounterText;
+
     [System.Serializable]
     public class Question
     {
@@ -42,7 +44,8 @@ public class QuizManager : MonoBehaviour
     }
 
     [System.Serializable]
-    public class QuestionList{
+    public class QuestionList
+    {
         public Question[] questions;
     }
 
@@ -54,7 +57,6 @@ public class QuizManager : MonoBehaviour
     public string selectedDifficulty;
 
     [Header("Multiple Choice UI")]
-
     public GameObject MultipleChoice;
     public TextMeshProUGUI MCQuestion;
     public Button Option1Btn, Option2Btn, Option3Btn, Option4Btn;
@@ -67,8 +69,11 @@ public class QuizManager : MonoBehaviour
     [Header("Fun Fact UI")]
     public GameObject funFactPanel;
     public TextMeshProUGUI funFactText;
+
     private void Start()
     {
+        isGameOver = false;
+
         selectedCategory = GameData.Instance.SelectedCategory;
         selectedDifficulty = GameData.Instance.SelectedDifficulty;
 
@@ -81,6 +86,7 @@ public class QuizManager : MonoBehaviour
         UpdateScoreText();
         UpdatePowerUpCounters();
     }
+
     private void LoadQuestions()
     {
         string fileName = selectedCategory + "_" + selectedDifficulty + ".json";
@@ -101,7 +107,7 @@ public class QuizManager : MonoBehaviour
                 questions[rand] = temp;
             }
 
-            int maxQuestions = Mathf.Min(50, questions.Count);
+            int maxQuestions = Mathf.Min(20, questions.Count);
             questions = questions.GetRange(0, maxQuestions);
 
             Debug.Log($"Loaded {questions.Count} questions from {fileName}");
@@ -114,6 +120,8 @@ public class QuizManager : MonoBehaviour
     }
     private void Update()
     {
+        if (isGameOver) return;
+
         if (!isAnswered && questions != null && questions.Count > 0 && !isTimeFrozen)
         {
             timeRemaining -= Time.deltaTime;
@@ -136,16 +144,19 @@ public class QuizManager : MonoBehaviour
 
     private void TimeOut()
     {
+        if (isGameOver) return;
+
         isAnswered = true;
-        wrongCount++;
         streakCount = 0;
 
         HighlightCorrectAnswer();
-        CheckWrongStreak();
         Invoke(nameof(NextQuestion), 2f);
     }
+
     private void StartQuestion()
     {
+        if (isGameOver) return;
+
         if (currentIndex >= questions.Count)
         {
             QuizFinished();
@@ -210,20 +221,19 @@ public class QuizManager : MonoBehaviour
     }
     private void OnAnswerSelected(int selectedIndex)
     {
-        if (isAnswered) return;
+        if (isGameOver || isAnswered) return;
         isAnswered = true;
 
         if (selectedIndex == currentQuestion.correctIndex)
         {
             score += 1;
             streakCount++;
-            wrongCount = 0;
             UpdateScoreText();
 
             if (streakCount == 3)
             {
                 score += 5;
-                Debug.Log("Streak Bonus! +5 points");
+                Debug.Log("🔥 Streak Bonus! +5 points");
                 UpdateScoreText();
             }
 
@@ -232,11 +242,9 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            wrongCount++;
             streakCount = 0;
             SoundManager.Instance.PlaySound("IncorrectAnswer");
             HighlightAnswer(selectedIndex, false);
-            CheckWrongStreak();
         }
 
         ShowFunFactIfAvailable();
@@ -291,7 +299,6 @@ public class QuizManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = $"Score: {score}";
     }
-
     private void UpdatePowerUpCounters()
     {
         if (hintCounterText != null)
@@ -301,58 +308,10 @@ public class QuizManager : MonoBehaviour
         if (addTimeCounterText != null)
             addTimeCounterText.text = addTimeUsed ? "Add Time: Used" : "Add Time: 1/1";
     }
-    private void ShowFunFactIfAvailable()
-    {
-        if (!string.IsNullOrEmpty(currentQuestion.funFact) && funFactPanel != null)
-        {
-            MultipleChoice.SetActive(false);
-            TF.SetActive(false);
-            SetPowerUpButtonsActive(false);
-        
-
-            funFactPanel.SetActive(true);
-            funFactText.text = "Fun Fact" + currentQuestion.funFact;
-
-            Invoke(nameof(HideFunFactAndContinue), 5f);
-        }
-        else
-        {
-            Invoke(nameof(NextQuestion), 2f);
-        }
-    }
-
-    private void HideFunFactAndContinue()
-    {
-        if (funFactPanel != null)
-            funFactPanel.SetActive(false);
-
-        SetPowerUpButtonsActive(true); 
-        isAnswered = false;
-        NextQuestion();
-    }
-
-    private void SetPowerUpButtonsActive(bool state)
-    {
-        if (hintButton != null) hintButton.gameObject.SetActive(state);
-        if (freezeTimeButton != null) freezeTimeButton.gameObject.SetActive(state);
-        if (addTimeButton != null) addTimeButton.gameObject.SetActive(state);
-        if (hintCounterText != null) hintCounterText.gameObject.SetActive(state);
-        if (freezeCounterText != null) freezeCounterText.gameObject.SetActive(state);
-        if (addTimeCounterText != null) addTimeCounterText.gameObject.SetActive(state);
-    }
-
-    private void CheckWrongStreak()
-    {
-        if (wrongCount >= 3)
-        {
-            Debug.Log("3 wrong in a row — Game Over!");
-            QuizFinished();
-        }
-    }
 
     private void UseHint()
     {
-        if (hintCount <= 0 || currentQuestion.isTrueFalse) return;
+        if (isGameOver || hintCount <= 0 || currentQuestion.isTrueFalse) return;
 
         hintCount--;
         UpdatePowerUpCounters();
@@ -375,7 +334,7 @@ public class QuizManager : MonoBehaviour
 
     private void UseFreezeTime()
     {
-        if (freezeCount <= 0 || isTimeFrozen) return;
+        if (isGameOver || freezeCount <= 0 || isTimeFrozen) return;
 
         freezeCount--;
         UpdatePowerUpCounters();
@@ -390,27 +349,70 @@ public class QuizManager : MonoBehaviour
         Color originalColor = timerImage.color;
         timerImage.color = Color.cyan;
 
-        Debug.Log($"Time frozen for 5 seconds! Remaining freezes: {freezeCount}");
-
+        Debug.Log($"Time frozen for 5 seconds!");
         yield return new WaitForSecondsRealtime(5f);
 
         timerImage.color = originalColor;
         isTimeFrozen = false;
-
         Debug.Log("Time resumed!");
     }
 
     private void UseAddTime()
     {
-        if (addTimeUsed) return;
+        if (isGameOver || addTimeUsed) return;
+
         addTimeUsed = true;
         addTimeButton.interactable = false;
         timeRemaining += 5f;
         UpdatePowerUpCounters();
         Debug.Log("Added +5 seconds!");
     }
+    private void ShowFunFactIfAvailable()
+    {
+        if (isGameOver) return;
+
+        if (!string.IsNullOrEmpty(currentQuestion.funFact) && funFactPanel != null)
+        {
+            MultipleChoice.SetActive(false);
+            TF.SetActive(false);
+            SetPowerUpButtonsActive(false);
+
+            funFactPanel.SetActive(true);
+            funFactText.text = "💡 " + currentQuestion.funFact;
+
+            Invoke(nameof(HideFunFactAndContinue), 5f);
+        }
+        else
+        {
+            Invoke(nameof(NextQuestion), 2f);
+        }
+    }
+
+    private void HideFunFactAndContinue()
+    {
+        if (isGameOver) return;
+
+        if (funFactPanel != null)
+            funFactPanel.SetActive(false);
+
+        SetPowerUpButtonsActive(true);
+        isAnswered = false;
+        NextQuestion();
+    }
+
+    private void SetPowerUpButtonsActive(bool state)
+    {
+        if (hintButton != null) hintButton.gameObject.SetActive(state);
+        if (freezeTimeButton != null) freezeTimeButton.gameObject.SetActive(state);
+        if (addTimeButton != null) addTimeButton.gameObject.SetActive(state);
+        if (hintCounterText != null) hintCounterText.gameObject.SetActive(state);
+        if (freezeCounterText != null) freezeCounterText.gameObject.SetActive(state);
+        if (addTimeCounterText != null) addTimeCounterText.gameObject.SetActive(state);
+    }
     private void NextQuestion()
     {
+        if (isGameOver) return;
+
         currentIndex++;
         if (currentIndex < questions.Count)
         {
@@ -425,7 +427,12 @@ public class QuizManager : MonoBehaviour
 
     private void QuizFinished()
     {
+        if (isGameOver) return;
+        isGameOver = true;
+        CancelInvoke();
+
         Debug.Log($"Quiz Finished! Final Score: {score}/{questions.Count}");
+
         GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
         if (gameOverUI != null)
             gameOverUI.ShowGameOver(score, questions.Count);
