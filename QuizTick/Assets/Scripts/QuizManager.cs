@@ -433,7 +433,7 @@ public class QuizManager : MonoBehaviour
 
         Debug.Log($"Quiz Finished! Final Score: {score}/{questions.Count}");
 
-        GameOverUI gameOverUI = FindObjectOfType<GameOverUI>();
+        GameOverUI gameOverUI = Object.FindFirstObjectByType<GameOverUI>();
         if (gameOverUI != null)
             gameOverUI.ShowGameOver(score, questions.Count);
     }
