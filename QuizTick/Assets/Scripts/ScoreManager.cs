@@ -2,6 +2,7 @@ using System.Linq;
 using SQLite4Unity3d;
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public static class ScoreManager
 {
@@ -56,5 +57,15 @@ public static int GetHighScore(string username, string language, string level)
         return entry != null ? entry.Value : 0;
     }
 }
-
+    public static List<Score> GetTopScores(string language, string level, int limit = 10)
+    {
+        using (var db = new SQLiteConnection(dbPath))
+        {
+            return db.Table<Score>()
+                .Where(s => s.Language == language && s.Level == level)
+                .OrderByDescending(s => s.Value)
+                .Take(limit)
+                .ToList();
+        }
+    }
 }
