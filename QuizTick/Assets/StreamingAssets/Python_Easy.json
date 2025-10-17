@@ -1,8 +1,8 @@
 {
   "questions":[
-    {"questionText": "Python is an interpreted language?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true, "funFact": "Did you know? Python translates code line-by-line instead of compiling everything first!"},
+    {"questionText": "Python is an interpreted language?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true, "funFact": "'Python translates code line-by-line instead of compiling everything first!'"},
     {"questionText": "Which symbol is used to start a comment in Python?", "options": ["#", "//", "/*", "--"], "correctIndex": 0, "isTrueFalse": false},
-    {"questionText": "Which function is used to display output in Python?", "options": ["echo()", "print()", "display()", "write()"], "correctIndex": 1, "isTrueFalse": false, "funFact": "Did you know? Python translates code line-by-line instead of compiling everything first!"},
+    {"questionText": "Which function is used to display output in Python?", "options": ["echo()", "print()", "display()", "write()"], "correctIndex": 1, "isTrueFalse": false, "funFact": "Python translates code line-by-line instead of compiling everything first!"},
     {"questionText": "Python uses indentation to define code blocks?", "options": ["True", "False"], "correctIndex": 0, "isTrueFalse": true, "funFact": "Unlike most languages, Python uses spaces and tabs (indentation) instead of curly braces!"},
     {"questionText": "Which file extension is used for Python files?", "options": [".java", ".py", ".txt", ".exe"], "correctIndex": 1, "isTrueFalse": false},
     {"questionText": "Which keyword is used to create a function in Python?", "options": ["function", "func", "def", "define"], "correctIndex": 2, "isTrueFalse": false, "funFact": "The 'def' keyword was chosen to make functions easy to define and read — short for ‘define’."},

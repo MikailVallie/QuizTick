@@ -68,7 +68,9 @@ public class QuizManager : MonoBehaviour
 
     [Header("Fun Fact UI")]
     public GameObject funFactPanel;
+    public TextMeshProUGUI funFactTitleText;
     public TextMeshProUGUI funFactText;
+
 
     private void Start()
     {
@@ -233,7 +235,7 @@ public class QuizManager : MonoBehaviour
             if (streakCount == 3)
             {
                 score += 5;
-                Debug.Log("🔥 Streak Bonus! +5 points");
+                Debug.Log("Streak Bonus! +5 points");
                 UpdateScoreText();
             }
 
@@ -378,7 +380,13 @@ public class QuizManager : MonoBehaviour
             SetPowerUpButtonsActive(false);
 
             funFactPanel.SetActive(true);
-            funFactText.text = "💡 " + currentQuestion.funFact;
+
+            // Set the title and fun fact text
+            if (funFactTitleText != null)
+                funFactTitleText.text = "Did You Know?";
+
+            if (funFactText != null)
+                funFactText.text = currentQuestion.funFact;
 
             Invoke(nameof(HideFunFactAndContinue), 5f);
         }
