@@ -741,9 +741,9 @@ MonoBehaviour:
   m_text: "- Profile \u2013 Can be edited anytime.\r\n- Timer \u2013 15 seconds per
     question.\r\n- Scoring \u2013 Correct = +1 point, Wrong/No Answer = 0.\r\n- Leaderboard
     \u2013 Separate top 3 for each language & difficulty.\r\n  (Example: Java Easy
-    vs Java Medium).\n-Hints: You can use hints up to 3 times during the game.\nFreeze
-    Time: You can freeze the timer 3 times to take a short breather.\nAdd 5 Seconds:
-    You can extend your timer by 5 seconds \u2014 but only once per game."
+    vs Java Medium).\n-Hints: You can use hints up to 3 times per game ONLY for multiple
+    choice questions\nFreeze Time: You can freeze the timer 3 times per game.\nAdd
+    5 Seconds: You can extend your timer by 5 seconds \u2014 but only once per game."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
