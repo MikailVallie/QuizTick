@@ -30,49 +30,42 @@ public class Login : MonoBehaviour
 
     //called when the player presses the Login button
     public void OnLoginButtonPressed()
-    {
-        string username = usernameInput.text.Trim();
-        string password = passwordInput.text;
+{
+    string username = usernameInput.text.Trim().ToLower();
+    string password = passwordInput.text;
 
-        //making sure both fields are filled
-        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+    if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+    {
+        ShowPopup("Please enter both username and password.");
+        return;
+    }
+
+    using (var db = new SQLiteConnection(dbPath))
+    {
+        var user = db.Table<User>().FirstOrDefault(u => u.Username.ToLower() == username);
+
+        if (user == null)
         {
-            ShowPopup("Please enter both username and password.");
+            ShowPopup("User not found!");
             return;
         }
 
-        //open the database and try to find the user
-        using (var db = new SQLiteConnection(dbPath))
+        bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.Password);
+
+        if (!isPasswordCorrect)
         {
-            var user = db.Table<User>().FirstOrDefault(u => u.Username == username);
-
-            //if no user exists with that username
-            if (user == null)
-            {
-                ShowPopup("User not found!");
-                return;
-            }
-
-            // ... after verifying password
-            bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, user.Password);
-
-            if (!isPasswordCorrect)
-            {
-                ShowPopup("Incorrect password!");
-                return;
-            }
-
-            // store logged-in username for use in other scenes
-            GameSession.LoggedInUsername = username;
-            Debug.Log("Logged in as: " + GameSession.LoggedInUsername);
-
-            ShowPopup("Login successful!", 1.5f);
-
-            //load Menu scene after short delay
-            Invoke(nameof(LoadMenuScene), 1.5f);
+            ShowPopup("Incorrect password!");
+            return;
         }
+
+        GameSession.LoggedInUsername = user.Username; 
+        Debug.Log("Logged in as: " + GameSession.LoggedInUsername);
+
+        ShowPopup("Login successful!", 1.5f);
+        Invoke(nameof(LoadMenuScene), 1.5f);
     }
-    
+}
+
 
     private void LoadMenuScene()
     {
