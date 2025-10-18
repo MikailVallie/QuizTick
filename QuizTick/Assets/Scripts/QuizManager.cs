@@ -433,40 +433,40 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-        public static QuizManager Instance;
-        private string currentPlayerId;
-        private string currentCategory;
-        private string currentDifficulty;
+    public static QuizManager Instance;
+    private string currentPlayerId;
+    private string currentCategory;
+    private string currentDifficulty;
 
-        void Awake()
+    void Awake()
+    {
+        if (Instance == null)
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                
-        }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
 
-        public void SetCurrentGame(string category, string difficulty, string playerId)
-        {
-            currentCategory = category;
-            currentDifficulty = difficulty;
-            currentPlayerId = playerId;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
-        public void EndGame(int finalScore)
+    public void SetCurrentGame(string category, string difficulty, string playerId)
+    {
+        currentCategory = category;
+        currentDifficulty = difficulty;
+        currentPlayerId = playerId;
+    }
+
+    public void EndGame(int finalScore)
+    {
+        LeaderboardManager leaderboard = FindAnyObjectByType<LeaderboardManager>();
+        if (leaderboard != null)
         {
-            LeaderboardManager leaderboard = FindAnyObjectByType<LeaderboardManager>();
-            if (leaderboard != null)
-            {
-                leaderboard.SavePlayerScore(currentPlayerId, currentCategory, currentDifficulty, finalScore);
-            }
+            leaderboard.SavePlayerScore(currentPlayerId, currentCategory, currentDifficulty, finalScore);
         }
+    }
 
 
 
@@ -476,7 +476,7 @@ public class QuizManager : MonoBehaviour
     {
         Debug.Log("Quiz Finished! Score: " + score + "/" + questions.Count);
 
-        
+
         if (!string.IsNullOrEmpty(GameSession.LoggedInUsername))
         {
             Debug.Log("=== ATTEMPTING TO SAVE SCORE ===");
@@ -485,11 +485,11 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Difficulty: " + selectedDifficulty);
             Debug.Log("Score: " + score);
 
-            
+
             ScoreManager.SaveScore(GameSession.LoggedInUsername, selectedCategory, selectedDifficulty, score);
             Debug.Log(" Score saved to SQLite database!");
 
-            
+
             LeaderboardManager leaderboard = FindObjectOfType<LeaderboardManager>();
             if (leaderboard != null)
             {
@@ -516,7 +516,7 @@ public class QuizManager : MonoBehaviour
             string scoresFilePath = Path.Combine(Application.streamingAssetsPath, "player_scores.json");
             ScoreData scoreData;
 
-            
+
             if (File.Exists(scoresFilePath))
             {
                 string jsonData = File.ReadAllText(scoresFilePath);
@@ -527,11 +527,11 @@ public class QuizManager : MonoBehaviour
                 scoreData = new ScoreData();
             }
 
-            
+
             PlayerScore newScore = new PlayerScore(playerName, category, difficulty, scoreValue);
             scoreData.AddOrUpdateScore(newScore);
 
-            
+
             string updatedJson = JsonUtility.ToJson(scoreData, true);
             File.WriteAllText(scoresFilePath, updatedJson);
 
@@ -543,18 +543,8 @@ public class QuizManager : MonoBehaviour
             Debug.LogError("Error saving score directly: " + e.Message);
         }
     }
+    
 
 }
     
-    private void QuizFinished()
-    {
-        if (isGameOver) return;
-        isGameOver = true;
-        CancelInvoke();
-
-        Debug.Log($"Quiz Finished! Final Score: {score}/{questions.Count}");
-
-        GameOverUI gameOverUI = Object.FindFirstObjectByType<GameOverUI>();
-        if (gameOverUI != null)
-            gameOverUI.ShowGameOver(score, questions.Count);
-    }
+    
