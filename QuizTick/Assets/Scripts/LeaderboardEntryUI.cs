@@ -13,7 +13,7 @@ public class LeaderboardEntryUI : MonoBehaviour
         if (playerNameText != null) playerNameText.text = playerName;
         if (scoreText != null) scoreText.text = score.ToString();
 
-        // Highlight top 3
+
         if (rankText != null)
         {
             if (rank == 1) rankText.color = Color.yellow;
