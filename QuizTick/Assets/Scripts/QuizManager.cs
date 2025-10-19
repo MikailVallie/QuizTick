@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class QuizManager : MonoBehaviour
 {
     private int score = 0;
-    private int streakCount = 0;
     private bool isGameOver = false;
 
     [Header("UI Elements")]
@@ -149,7 +148,6 @@ public class QuizManager : MonoBehaviour
         if (isGameOver) return;
 
         isAnswered = true;
-        streakCount = 0;
 
         HighlightCorrectAnswer();
         Invoke(nameof(NextQuestion), 2f);
@@ -229,22 +227,13 @@ public class QuizManager : MonoBehaviour
         if (selectedIndex == currentQuestion.correctIndex)
         {
             score += 1;
-            streakCount++;
             UpdateScoreText();
-
-            if (streakCount == 3)
-            {
-                score += 5;
-                Debug.Log("Streak Bonus! +5 points");
-                UpdateScoreText();
-            }
 
             SoundManager.Instance.PlaySound("CorrectAnswer");
             HighlightAnswer(selectedIndex, true);
         }
         else
         {
-            streakCount = 0;
             SoundManager.Instance.PlaySound("IncorrectAnswer");
             HighlightAnswer(selectedIndex, false);
         }
@@ -381,7 +370,6 @@ public class QuizManager : MonoBehaviour
 
             funFactPanel.SetActive(true);
 
-            // Set the title and fun fact text
             if (funFactTitleText != null)
                 funFactTitleText.text = "Did You Know?";
 
@@ -443,7 +431,7 @@ public class QuizManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
         }
         else
