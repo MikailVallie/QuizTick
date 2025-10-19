@@ -120,6 +120,15 @@ public class LeaderboardManager : MonoBehaviour
             int rank = i + 1;
             switch (rank)
             {
+                case 1:
+                    if (firstPlaceUI != null) firstPlaceUI.SetEntry(rank, "---", 0);
+                    break;
+                case 2:
+                    if (secondPlaceUI != null) secondPlaceUI.SetEntry(rank, "---", 0);
+                    break;
+                case 3:
+                    if (thirdPlaceUI != null) thirdPlaceUI.SetEntry(rank, "---", 0);
+                    break;
                 case 4:
                     if (fourthPlaceUI != null) fourthPlaceUI.SetEntry(rank, "---", 0);
                     break;
